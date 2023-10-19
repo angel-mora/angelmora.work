@@ -11,10 +11,10 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoAleph from '@/images/logos/logoAleph.jpg'
+import logoSeproban from '@/images/logos/logoSeproban.jpg'
+import logoInfotech from '@/images/logos/logo-infotech.png'
+import logoAtt from '@/images/logos/logoAtt.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -187,9 +187,9 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
+      company: 'InfoTech Research Group',
+      title: 'Fullstack Ruby on Rails Developer',
+      logo: logoInfotech,
       start: '2019',
       end: {
         label: 'Present',
@@ -197,25 +197,25 @@ function Resume() {
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
+      company: 'Aleph Risk Intelligence',
+      title: 'Ruby Developer',
+      logo: logoAleph,
+      start: '2021',
+      end: '2021',
+    },
+    {
+      company: 'SEPROBAN',
+      title: 'Fullstack Ruby on Rails Developer',
+      logo: logoSeproban,
+      start: '2019',
+      end: '2021',
+    },
+    {
+      company: 'AT&T',
+      title: 'Tech Support and Sales Agent',
+      logo: logoAtt,
+      start: '2019',
       end: '2019',
-    },
-    {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
     },
   ]
 
@@ -230,7 +230,7 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button href="angel-mora-cv.pdf" variant="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
