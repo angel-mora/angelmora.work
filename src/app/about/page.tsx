@@ -50,7 +50,7 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'I’m Spencer Sharp. I live in New York City, where I design the future.',
+    'I\'m Angel Mora, Philosopher and Programmer with 5 years of experience',
 }
 
 export default function About() {
@@ -69,58 +69,59 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m Spencer Sharp. I live in New York City, where I design the
-            future.
+            I'm Angel Mora, Philosopher and Programmer
           </h1>
+          <h3 className="text-5xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mt-6">
+            +5 years of experience
+          </h3>
+
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve loved making things for as long as I can remember, and wrote
-              my first program when I was 6 years old, just two weeks after my
-              mom brought home the brand new Macintosh LC 550 that I taught
-              myself to type on.
+              I've always been passionate about programming.
+              Got my first computer when I was 10 and been breaking stuff ever since.
+              During college, spent hours in Linux, reading a lot about distros and the Open Source Software Movement.
+              A few years later (2017) started with Ruby and Jekyll, writing a blog called disonancias.org.
+              From there, felt in love with Javascript and found my way through GitHub amazing features.
+              Worked in a Call Center for AT&T and learned a lot about debugging the browser, performing complex SQL queries.
+              I always remember all those good lessons from there, like learning to sale under stressful environments, as well as engaging with customers. Later I found out that AT&T proudly follows Sigma6 methodology. I have those moments deep in my heart. 
             </p>
             <p>
-              The only thing I loved more than computers as a kid was space.
-              When I was 8, I climbed the 40-foot oak tree at the back of our
-              yard while wearing my older sister’s motorcycle helmet, counted
-              down from three, and jumped — hoping the tree was tall enough that
-              with just a bit of momentum I’d be able to get to orbit.
+              My first technical challenges were related to automate writing with Pandoc and Bash.
+              Unix Filesystem and some Bash scripting soon helped me to understand that programming languages are just ways to interact with the powerful system a computer is.
+              In 2019 landed my first formal job as a Data Analyst using R, Python and some OSINT tools for Crime Analysis.
+              In that job discovered the power of having an application that secures your research.
+              That year also got accepted at Microverse, a bootcamp that teaches Fullstack Web Development with Ruby on Rails + ReactJS, which led me to start helping migrate the company processes into a web application with multiple features, most of them related to PostGIS and Geographical Data Visualization, using tools like Leaflet.js and Kepler.gl.
             </p>
             <p>
-              I spent the next few summers indoors working on a rocket design,
-              while I recovered from the multiple surgeries it took to fix my
-              badly broken legs. It took nine iterations, but when I was 15 I
-              sent my dad’s Blackberry into orbit and was able to transmit a
-              photo back down to our family computer from space.
+              In 2023 finished a Cybersecurity Bootcamp from EdX that helped me get my CompTIA Security+ Certification.
+              I currently work at an International Company.
+              Spend my days improving my Obsidian skills and developing a side project for Knowledge Base Networking. I like old-school text editors, like Vim and Emacs.
             </p>
             <p>
-              Today, I’m the founder of Planetaria, where we’re working on
-              civilian space suits and manned shuttle kits you can assemble at
-              home so that the next generation of kids really <em>can</em> make
-              it to orbit — from the comfort of their own backyards.
+              I'm an enthusiast of GIS projects and of The Rails Way. If you find my profile interesting, don't hesitate to reach out!
             </p>
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={TwitterIcon}>
+            <SocialLink href="https://twitter.com/angelmoradev" icon={TwitterIcon}>
               Follow on Twitter
             </SocialLink>
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+            <SocialLink href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" icon={InstagramIcon} className="mt-4">
               Follow on Instagram
             </SocialLink>
-            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+            <SocialLink href="https://github.com/angel-mora" icon={GitHubIcon} className="mt-4">
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            <SocialLink href="https://linkedin.com/in/angelmoradev" icon={LinkedInIcon} className="mt-4">
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
-              href="mailto:spencer@planetaria.tech"
+              href="mailto:angelmomaa@gmail.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              spencer@planetaria.tech
+              angelmomaa@gmail.com
             </SocialLink>
           </ul>
         </div>
