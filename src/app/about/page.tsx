@@ -69,7 +69,7 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I\'m Angel Mora, Philosopher and Programmer
+            I&apos;m Angel Mora, Philosopher and Programmer
           </h1>
           <h3 className="text-5xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mt-6">
             +5 years of experience
@@ -77,7 +77,7 @@ export default function About() {
 
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I've always been passionate about programming.
+              I&apos;ve always been passionate about programming.
               Got my first computer when I was 10 and been breaking stuff ever since.
               During college, spent hours in Linux, reading a lot about distros and the Open Source Software Movement.
               A few years later (2017) started with Ruby and Jekyll, writing a blog called disonancias.org.
@@ -98,7 +98,7 @@ export default function About() {
               Spend my days improving my Obsidian skills and developing a side project for Knowledge Base Networking. I like old-school text editors, like Vim and Emacs.
             </p>
             <p>
-              I'm an enthusiast of GIS projects and of The Rails Way. If you find my profile interesting, don't hesitate to reach out!
+              I&apos;m an enthusiast of GIS projects and of The Rails Way. If you find my profile interesting, don&apos;t hesitate to reach out!
             </p>
           </div>
         </div>
