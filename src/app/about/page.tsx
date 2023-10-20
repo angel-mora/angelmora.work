@@ -69,7 +69,7 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I'm Angel Mora, Philosopher and Programmer
+            I\'m Angel Mora, Philosopher and Programmer
           </h1>
           <h3 className="text-5xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mt-6">
             +5 years of experience
