@@ -11,31 +11,33 @@ import logoInfotech from '@/images/logos/logo-infotech.png'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'naviknows.com',
+//
+// opengeodata.mx
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      'A Mastodon instance that supports Hotwire from Obsidian rendered content.',
+    link: { href: 'https://naviknows.com', label: 'naviknows.com' },
     logo: logoInfotech,
   },
   {
-    name: 'Animaginary',
+    name: 'dissonances.biz',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      'Obsidiosaurus and TinaCMS had a baby over my Critical Theory of Technology writings. <strong>PLEASE DONATE!</strong>',
+    link: { href: '#', label: 'dissonances.biz' },
     logo: logoAnimaginary,
   },
   {
-    name: 'HelioStream',
+    name: 'Dotfiles & Obsidian templates',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      'Config I use, recommend and enforce in my company. Handle everything as markdown and make a beatiful text-based life organization system (and also common NvChad config for Ruby on Rails/Typescript developer).',
+    link: { href: '#', label: 'github.com/angel-mora/obsidian-dotfiles' },
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
+    name: 'opengeodata.world',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      'An open-source initiative to visualize the world demographics with Kepler.gl',
+    link: { href: 'https://opengeodata.world', label: 'opengeodata.world' },
     logo: logoCosmos,
   },
   {
