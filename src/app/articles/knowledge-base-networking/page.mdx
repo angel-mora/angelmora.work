@@ -1,0 +1,75 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import designSystem from './planetaria-design-system.png'
+
+export const article = {
+  author: 'Angel Mora',
+  date: '2023-10-10',
+  title: 'Knowledge Base Networking',
+  description:
+    'About the missing features for a new era of Social Networks for nerds.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+I started my journey as a developer motivated by my desire to have the possibility of managing all my pdf, presentations and websites coming from a single source of truth. I initially got in love with Pandoc and Ruby Jekyll. As time went through, started using OrgMode and later Obsidian.
+
+I found that to be the great resource available to do what OrgMode only dreamed of: having all your life and projects managed over plain-text.
+
+<Image src={designSystem} alt="" />
+
+I knew that to get it right I was going to have to replicate the viewing conditions of someone from the future, so I grabbed my space helmet from the closet, created a new Figma document, and got to work.
+
+## Text-based queries
+
+Recent advances in markdown creation and rendering set MDX as the most viable option for writing awesome content. At the same time, the principles that run Obsidian and Logseq (the open source competitor) opened up a bunch of possibilities for writing in a structure way.
+
+Who would have thought that by simply setting a standard pattern to log your time would suffice to get metrics about your productivity? That's what the Knowledge Base plugins brought to the table.
+
+```js dataviewjs
+// Provide a sample dataviewjs query
+dv.pages().where(p => p.file.name.startsWith("2021-")).sum(p => p.frontmatter.wordCount)
+```
+
+The query above is a dataviewjs query that will sum the word count of all the pages that start with 2021- in the file name.
+
+## Interoperability at the core of Knowledge Base Management
+
+Old ideas that founded entire communities dedicated to open source, have finally wrapped up in these kind of software. And the SSR era brings just about the right amount of interoperability to make it possible. It's now possible to have markdown with frontmatter as plain text configured content and a server that builds it and serves its js all encapsulated.
+
+In Ruby on Rails, `view_components` and Hotwire have made this possible.
+
+However, we are still missing a few social features for those inner-life second brains.
+
+1. **Collaboration**: I want to be able to share my knowledge base with my friends and colleagues. I want to be able to have a shared knowledge base with my team.
+2. **Notifications**: I want to be able to get notified when someone mentions me in a note or when someone comments on a note I wrote.
+3. **Sharing**: I want to be able to share a note with a friend or colleague. I want to be able to share a note with the world.
+4. **Search**: I want to be able to search for notes in my knowledge base. I want to be able to search for notes in my team's knowledge base.
+5. **Tags**: I want to be able to tag notes in my knowledge base. I want to be able to tag notes in my team's knowledge base.
+
+Ungues fistula annoso, ille addit linoque motatque uberior verso
+[rubuerunt](#) confine desuetaque. _Sanguine_ anteit
+emerguntque expugnacior est pennas iniqui ecce **haeret** genus: peiora imagine
+fossas Cephisos formosa! Refugitque amata [refelli](#)
+supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum
+regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
+ars talis.
+
+```c
+digital.webcam_dual_frequency = webmasterMms;
+if (5 + language_standalone_google) {
+    cc_inbox_layout *= file_character;
+    task += p;
+    lockUnicode += enterprise_monochrome(tokenFunctionPersonal, keyVirtual,
+            adf);
+}
+windows_binary_esports(87734, array(restoreRomTopology, adRaw(407314),
+        dongleBashThumbnail), interpreter);
+```
+
+For these problems, we at [naviknows.com](naviknows.com) are building a new way to manage and share your content, so you can treat your Knowledge Base as a single source of truth for everything. From pushing a post to your blog to sharing a note with a friend, now you are in control and you know what you are sharing is truly yours.
