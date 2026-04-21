@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta property="og:title" content="Angel Mora - Senior Ruby on Rails Developer">
+  <meta property="og:description" content="Senior Software Engineer specializing in Ruby on Rails, Hotwire, and AI-augmented platforms.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://angelmora.work">
+  <meta property="og:image" content="https://angelmora.work/og-image.png">
+
+  <script defer data-domain="angelmora.work" src="https://plausible.io/js/script.outbound-links.js"></script>
+
+  <title>Angel Mora - Senior Ruby on Rails Developer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      
+      --pitch-black: #000000;
+      --rojo-cta: #DC2626;
+      --gris-medio: #717182;
+      --off-white: #FAFAFA;
+      --pure-white: #FFFFFF;
+      --amarillo: #FFD700;
+      
+      --shadow-gumroad: 3px 3px 0px #000;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { font-size: 10.5px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 10.5px;
+      line-height: 1.45;
+      color: var(--pitch-black);
+      background: var(--pure-white);
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.4in 0.5in;
+    }
+
+    a { color: var(--pitch-black); text-decoration: none; }
+    a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px; }
+
+    /* Print button - clean style */
+    .print-bar {
+      background: var(--off-white);
+      padding: 8px 12px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--pitch-black);
+    }
+    .print-btn {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: white;
+      cursor: pointer;
+      background: var(--rojo-cta);
+      border: none;
+      padding: 6px 14px;
+      box-shadow: 3px 3px 0px #000;
+    }
+    .print-btn:hover { text-decoration: none; transform: translate(-1px, -1px); box-shadow: 4px 4px 0px #000; }
+    .print-hint { font-size: 8.5px; color: var(--gris-medio); font-family: var(--font-mono); }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--pitch-black);
+    }
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .header h1 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--pitch-black);
+    }
+    .header .title {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gris-medio);
+    }
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--gris-medio);
+    }
+    .contact-row a {
+      color: var(--gris-medio);
+    }
+    .contact-row a:hover {
+      color: var(--pitch-black);
+    }
+    .contact-icon {
+      width: 11px;
+      height: 11px;
+      fill: var(--gris-medio);
+    }
+
+    /* Sections */
+    h2 {
+      font-family: var(--font-display);
+      font-size: 9.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--pitch-black);
+      margin-top: 16px;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--pitch-black);
+    }
+
+    /* Profile */
+    .profile p {
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: var(--pitch-black);
+    }
+
+    /* Experience */
+    .exp {
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .exp-title {
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+    .exp-company { color: var(--pitch-black); }
+    .exp-meta {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--gris-medio);
+      white-space: nowrap;
+    }
+    .exp-desc {
+      font-size: 10px;
+      color: var(--pitch-black);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .exp-arch {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      color: var(--gris-medio);
+      background: var(--off-white);
+      padding: 1px 5px;
+      border: 1px solid var(--pitch-black);
+    }
+
+    /* Achievements - Square bullets */
+    .achievements {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .achievements li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      font-size: 9.5px;
+      line-height: 1.4;
+      color: var(--pitch-black);
+    }
+    .achievements li::before {
+      content: '■';
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 5px;
+      color: var(--pitch-black);
+    }
+
+    .tech-stack {
+      margin-top: 4px;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--gris-medio);
+    }
+    .tech-stack strong { color: var(--pitch-black); }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px 16px;
+    }
+    .skill-cat { margin-bottom: 4px; }
+    .skill-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--pitch-black);
+      font-size: 9.5px;
+      margin-bottom: 1px;
+    }
+    .skill-items {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--gris-medio);
+      line-height: 1.35;
+    }
+
+    /* Education */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 16px;
+    }
+    .edu { font-size: 9.5px; margin-bottom: 3px; }
+    .edu-degree { font-weight: 600; color: var(--pitch-black); }
+    .edu-school { font-family: var(--font-mono); font-size: 8.5px; color: var(--gris-medio); }
+
+    /* Freelance */
+    .freelance-item {
+      font-size: 9.5px;
+      color: var(--pitch-black);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .freelance-item strong { color: var(--pitch-black); }
+    .freelance-item em {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--gris-medio);
+    }
+
+    /* Languages */
+    .langs {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--gris-medio);
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { padding: 0.25in 0.35in; }
+      a { color: var(--pitch-black) !important; text-decoration: none !important; }
+      h1 { font-size: 22px; }
+      h2 { margin-top: 12px; margin-bottom: 6px; }
+      .exp { margin-bottom: 10px; }
+      .header { margin-bottom: 10px; padding-bottom: 8px; }
+      .achievements li { margin-bottom: 3px; }
+      .skills-grid { gap: 6px 14px; }
+      .edu-grid { gap: 3px 14px; }
+    }
+
+    @page { size: letter; margin: 0.25in; orphans: 2; widows: 2; }
+  </style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  <a href="javascript:window.print()" class="print-btn">Print / Save as PDF</a>
+  <span class="print-hint">Chrome. Margins: None. Save as "Angel_Mora_Resume.pdf"</span>
+</div>
+
+<header class="header">
+  <div class="header-left">
+    <h1>Angel Mora</h1>
+    <div class="title">Senior Ruby on Rails Developer</div>
+  </div>
+  <div class="header-right">
+    <div class="contact-row">
+      <svg class="contact-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <a href="mailto:angelmomaa@gmail.com">angelmomaa@gmail.com</a>
+    </div>
+    <div class="contact-row">
+      <svg class="contact-icon" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+      <a href="https://angelmora.work" target="_blank">angelmora.work</a>
+    </div>
+    <div class="contact-row">
+      <svg class="contact-icon" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      <a href="https://linkedin.com/in/angelmoradev" target="_blank">angelmoradev</a>
+    </div>
+    <div class="contact-row">
+      <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      <a href="https://github.com/angel-mora" target="_blank">angel-mora</a>
+    </div>
+  </div>
+</header>
+
+<section class="profile">
+  <p>Software Engineer with 6+ years of professional experience specializing in Ruby on Rails full-stack development. Deep expertise building scalable web applications across SaaS platforms, enterprise systems, and GIS solutions following MVC architecture and object-oriented programming principles. Strong track record in performance optimization, test automation, and agile development. Currently building an AI-augmented content platform with a 15-agent orchestration system on Rails 8.</p>
+</section>
+
+<h2>Professional Experience</h2>
+
+<article class="exp">
+  <div class="exp-header">
+    <div class="exp-title">Founder & Rails Developer at <span class="exp-company"><a href="https://speculative-technologies.com" target="_blank">Speculative Technologies</a></span></div>
+    <div class="exp-meta">Jul 2025 - Present</div>
+  </div>
+  <div class="exp-desc"><span class="exp-arch">[Solopreneur]</span> Knowledge management and publishing platform that transforms Obsidian vaults into monetizable websites with newsletters, semantic search, and AI-powered content curation. Rails 8 application with a 15-agent AI orchestration system processing 10,000+ documents through a 7-phase content pipeline.</div>
+  <ul class="achievements">
+    <li>Architected 15-agent AI orchestration system with 8 on-demand skills using Claude (Opus/Sonnet/Haiku), coordinating autonomous content processing across 7 pipeline phases</li>
+    <li>Processed 8,032 bookmarks and 1,762 conversations into structured knowledge base using custom Ruby ETL scripts, reducing content curation time from days to hours</li>
+    <li>Designed cost-optimized multi-model LLM strategy combining Claude, Ollama (local Qwen 3 14B), and NanoGPT, reducing AI infrastructure costs by 92% ($510/mo to $38/mo)</li>
+    <li>Built spec-driven development workflow with agent quality assessment framework (7-dimension scoring) for auditing agent ecosystems</li>
+    <li>Implemented mobile-to-VPS autonomous agent workflow via GitHub Actions, enabling AI task execution from Android/Termux</li>
+  </ul>
+  <div class="tech-stack"><strong>Stack:</strong> Rails 8, Hotwire, PostgreSQL 16, pgvector, Solid Queue/Cache/Cable, Kamal 2, Cloudflare R2, Claude API, Ollama, Quartz 4, Git</div>
+</article>
+
+<article class="exp">
+  <div class="exp-header">
+    <div class="exp-title">Senior Ruby on Rails Developer at <a href="https://www.inktavo.com/" class="exp-company">Inktavo (Printavo)</a></div>
+    <div class="exp-meta">Sep 2024 - Jul 2025</div>
+  </div>
+  <div class="exp-desc"><span class="exp-arch">[Monolith]</span> Industry-leading SaaS for branded merchandise. Contributed to Printavo, the flagship shop management platform serving thousands of print shops. Implemented features using Rails 6/7 with Hotwire and ViewComponent, maintained multi-provider payment architecture (Stripe, Payrix, PayPal), managed Pundit authorization policies, and led Rails 7 migration within agile SCRUM team.</div>
+  <ul class="achievements">
+    <li>Reduced initial page load by 68% (2.5s to 0.8s) and database queries by 74% (47 to 12) by implementing Turbo Frames lazy loading for order dashboard tabs with Pundit authorization preserved in each partial</li>
+    <li>Accelerated Rails 7 migration by leading 10 stories across 6 sprints, establishing migration patterns adopted by 8-person team and resolving gem compatibility issues</li>
+    <li>Championed code quality by refactoring 100+ files to Rubocop standards across 32+ PRs, configuring Pronto for automated PR linting and haml-lint for template validation</li>
+    <li>Managed Flipper feature flag lifecycle (creation, beta rollout, monitoring, cleanup) for billing, receiving, and email domain verification features across production deployments</li>
+    <li>Maintained multi-provider payment testing with VCR cassettes for Stripe and debugged Capybara iframe interactions for Payrix embedded payments</li>
+  </ul>
+  <div class="tech-stack"><strong>Stack:</strong> Rails 6/7, Hotwire (Turbo, Stimulus), ViewComponent, Pundit, Flipper, Tailwind, HAML, MySQL, PostgreSQL, Redis, Sidekiq, Stripe, Payrix, VCR, Capybara, CircleCI, Heroku, NewRelic</div>
+</article>
+
+<article class="exp">
+  <div class="exp-header">
+    <div class="exp-title">Senior Ruby on Rails Developer at <a href="https://www.infotech.com/" class="exp-company">Info-Tech Research Group</a></div>
+    <div class="exp-meta">Dec 2021 - Sep 2024</div>
+  </div>
+  <div class="exp-desc"><span class="exp-arch">[Monolith]</span> Enterprise IT research and advisory company. Contributed across 9 products: SoftwareReviews, Provider Portal (built from scratch), Info-Tech CMS, MyPolicies, Pelican, Feedback, Kestrel, Warthog, and DDR Reports. Focused on performance optimization, CanCanCan/Pundit authorization, paper_trail audit trails, SAML SSO, and team collaboration through code reviews and technical presentations.</div>
+  <ul class="achievements">
+    <li>Eliminated N+1 queries by refactoring core methods using <code>group_by</code>/<code>index_by</code> hash lookups and <code>activerecord-import</code> for bulk operations, reducing feature lookups from O(n) to O(1)</li>
+    <li>Implemented CanCanCan authorization for offering access control based on license status, writing RSpec tests for abilities across 5 applications</li>
+    <li>Stabilized Sidekiq by diagnosing hanging jobs and implementing <code>super_fetch!</code>, <code>reliable_scheduler!</code>, <code>transactional_push!</code> with systemd watchdog monitoring</li>
+    <li>Built Pusher WebSocket progress reporting for LargeCategoryCreationJob handling 10,000+ record migrations with comprehensive error handling</li>
+    <li>Implemented SAML SSO across 4 applications using Microsoft Entra and Okta, with SCIM group provisioning and role-based access</li>
+    <li>Built Provider Portal from scratch using SoftwareReviewsShared ViewComponents and breadcrumbs.js, establishing process standardization and knowledge-sharing across frontend teams</li>
+    <li>Resolved MyPolicies Sidekiq multitenancy issues and led a Domain-Driven Design (DDD) refactor for core models to ensure robust data isolation</li>
+    <li>Created comprehensive technical documentation, API references, and runbooks, translating complex engineering concepts for non-technical stakeholders and external clients</li>
+    <li>Reduced test suite from 45 to 38 minutes by profiling with TestProf/FactoryBot and delivered Bullet gem presentation for team-wide N+1 detection adoption</li>
+  </ul>
+  <div class="tech-stack"><strong>Stack:</strong> Rails 5/6, PostgreSQL, MySQL, Redis, Sidekiq, CanCanCan, Pundit, paper_trail, acts_as_tenant, Pusher, Elasticsearch, jQuery, Stimulus, ViewComponent, RSpec, FactoryBot, Capybara, Semaphore CI, GitHub Actions, Heroku, Capistrano, Rollbar</div>
+</article>
+
+<article class="exp">
+  <div class="exp-header">
+    <div class="exp-title">Senior Ruby on Rails Developer at <a href="https://alephri.com" class="exp-company">Aleph</a></div>
+    <div class="exp-meta">Oct 2021 - Dec 2021</div>
+  </div>
+  <div class="exp-desc"><span class="exp-arch">[Microservices]</span> Real-time logistics tracking platform for fleet management across Latin America. Joined during migration from Rails monolith to pure Ruby microservices on AWS serverless. Built GraphQL/REST integrations across 7 microservices, automated infrastructure with SAM/CloudFormation, and implemented PostGIS scripts for geographic data.</div>
+  <ul class="achievements">
+    <li>Built 5 GraphQL/REST integrations between AWS AppSync, API Gateway, and Lambda using adapter pattern to decouple core logic from transport layer</li>
+    <li>Automated infrastructure deployment with SAM templates and CloudFormation across 3 environments with Aurora PostgreSQL Serverless</li>
+    <li>Expanded to 2 new markets (Brazil, Colombia) by implementing PostGIS scripts using INEGI sources, QGIS, and Elasticsearch for geojson storage</li>
+  </ul>
+  <div class="tech-stack"><strong>Stack:</strong> Ruby, React, AWS (Lambda, AppSync, API Gateway, Aurora PostgreSQL, CloudFormation, SAM, CloudWatch), PostGIS, GraphQL, Elasticsearch, Docker</div>
+</article>
+
+<article class="exp">
+  <div class="exp-header">
+    <div class="exp-title">Intermediate Rails Developer / Intelligence Analyst at <a href="https://www.seproban.com" class="exp-company">SEPROBAN</a></div>
+    <div class="exp-meta">Oct 2019 - Sep 2021</div>
+  </div>
+  <div class="exp-desc"><span class="exp-arch">[Monolith + REST API]</span> Mexico's banking security company serving all major financial institutions. Built the Centro de Inteligencia Bancaria (CIB) -- a strategic intelligence center. Developed core Rails application with versioned REST API serving a React-based Kepler.gl mapping frontend, processing ~200K georeferenced crime incidents.</div>
+  <ul class="achievements">
+    <li>Saved 120+ hours/month by creating 30+ rake tasks to automate coordinate processing, timestamp normalization, and polygon validation using activerecord-import for bulk insertion</li>
+    <li>Built interactive crime maps with Leaflet.js and Kepler.gl (React) visualizing ~200K georeferenced incidents with clustering and choropleth layers</li>
+    <li>Centralized intelligence workflows by building Rails monolith that transformed MS Access, DBF, Excel, and CSV data into unified analysis platform with Chartkick reports</li>
+  </ul>
+  <div class="tech-stack"><strong>Stack:</strong> Rails, PostgreSQL, PostGIS, JavaScript, Leaflet.js, Kepler.gl (React), Chartkick, ActiveRecord Import, Devise, Docker, Azure DevOps, Heroku</div>
+</article>
+
+<article class="exp">
+  <div class="exp-header">
+    <div class="exp-title">Freelance Ruby on Rails Developer</div>
+    <div class="exp-meta">2019 - 2021</div>
+  </div>
+  <div class="freelance-item"><strong>Academia de Empresarios (2020-2021):</strong> Led team of 5 developers and 2 designers to create equity crowdfunding MVP. Delivered in ~4 months by designing data model ERD and coordinating 24 SCRUM rituals. Integrated Stripe API for payment processing with webhook callbacks. <em>Stack: Rails, PostgreSQL, React, Stripe, Docker, GitHub Actions, AWS S3</em></div>
+  <div class="freelance-item"><strong>Baos Life (2019-2020):</strong> Led 3 developers to translate Excel requirements into production Rails app. Launched subscription platform in single quarter with Stripe Connect for recurring payments. Dockerized development with ngrok for webhook testing. <em>Stack: Rails, PostgreSQL, React, Docker, Stripe Connect, Devise, GitHub Actions</em></div>
+</article>
+
+<h2>Technical Skills</h2>
+<div class="skills-grid">
+  <div class="skill-cat">
+    <div class="skill-title">Backend</div>
+    <div class="skill-items">Rails 5/6/7/8, Hotwire (Turbo, Stimulus), ViewComponent, Sidekiq, GraphQL, Solid Queue/Cache/Cable</div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-title">Auth & Audit</div>
+    <div class="skill-items">CanCanCan, Pundit, paper_trail, Flipper, Devise, SAML SSO</div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-title">Databases</div>
+    <div class="skill-items">PostgreSQL (pgvector), PostGIS, MySQL, Redis, Elasticsearch</div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-title">Testing</div>
+    <div class="skill-items">RSpec, FactoryBot, Capybara, VCR, TestProf, Bullet, SimpleCov</div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-title">DevOps</div>
+    <div class="skill-items">Heroku, Docker, Kamal 2, AWS (Lambda, Aurora, S3, CloudFormation), CI/CD (GitHub Actions, CircleCI, Semaphore), Capistrano</div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-title">AI/LLM</div>
+    <div class="skill-items">Claude API, Ollama, agent orchestration, RAG (pgvector), prompt engineering</div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-title">Frontend</div>
+    <div class="skill-items">Stimulus, jQuery, React, Turbo Frames/Streams, Tailwind, Bootstrap, HAML</div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-title">GIS</div>
+    <div class="skill-items">PostGIS, Leaflet.js, Kepler.gl, QGIS, clustering, choropleth</div>
+  </div>
+  <div class="skill-cat">
+    <div class="skill-title">Practices</div>
+    <div class="skill-items">Agile/SCRUM, MVC, OOP, server-side rendering, spec-driven development</div>
+  </div>
+</div>
+
+<h2>Education</h2>
+<div class="edu-grid">
+  <div class="edu">
+    <div class="edu-degree">MSc Computer Science & Telecom (Expected 2026)</div>
+    <div class="edu-school">UTEL | 2025 - Present | GPA: 9.4/10</div>
+  </div>
+  <div class="edu">
+    <div class="edu-degree">CompTIA Security+ Prep</div>
+    <div class="edu-school">edX/ITESM | 2023</div>
+  </div>
+  <div class="edu">
+    <div class="edu-degree">BA Philosophy</div>
+    <div class="edu-school">UNAM | 2014-2017; Graduated 2022 | GPA: 9.58 | Cedula: 13166504</div>
+  </div>
+  <div class="edu">
+    <div class="edu-degree">Full Stack Developer</div>
+    <div class="edu-school">Microverse | 2020-2021 | Rails, React, &lt;4% acceptance</div>
+  </div>
+</div>
+
+<h2>Certifications</h2>
+<div class="edu-grid">
+  <div class="edu">
+    <div class="edu-degree">OWASP Top 10</div>
+    <div class="edu-school">2023</div>
+  </div>
+  <div class="edu">
+    <div class="edu-degree">Kevin Mitnick Security Awareness</div>
+    <div class="edu-school">KnowBe4 | 2022</div>
+  </div>
+  <div class="edu">
+    <div class="edu-degree">Microverse Fullstack Certification</div>
+    <div class="edu-school">2021</div>
+  </div>
+  <div class="edu">
+    <div class="edu-degree">Programa Liderazgos Progresistas</div>
+    <div class="edu-school">Friedrich Ebert Stiftung | 2018</div>
+  </div>
+</div>
+
+<h2>Languages</h2>
+<div class="langs">Spanish (Native) | English (Full Professional) | French (B1)</div>
+
+</body>
+</html>
