@@ -3,13 +3,21 @@
     <div class="mx-auto max-w-2xl">
       <article>
         <header class="flex flex-col">
-          <h1 class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            <%= @article[:title] %>
-          </h1>
-          <time datetime="<%= @article[:date] %>" class="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500">
+          <div class="relative">
+            <img
+              src="<%= @article[:image] %>"
+              alt=""
+              class="aspect-[16/9] w-full rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/10 dark:ring-zinc-100/10"></div>
+          </div>
+          <time datetime="<%= @article[:date] %>" class="mt-8 flex items-center text-base text-zinc-400 dark:text-zinc-500">
             <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
             <span class="ml-3"><%= Date.parse(@article[:date]).strftime("%B %-d, %Y") %></span>
           </time>
+          <h1 class="mt-2 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            <%= @article[:title] %>
+          </h1>
         </header>
         <%= render ProseComponent.new(class: "mt-8") do %>
           <%= @article[:content].html_safe %>

@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
       slug: "knowledge-base-networking",
       description: "About the missing features for a new era of Social Networks for nerds.",
       date: "2023-10-10",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
       content: <<~HTML
         <p>I started my journey as a developer motivated by my desire to have the possibility of managing all my pdf, presentations and websites coming from a single source of truth. I initially got in love with Pandoc and Ruby Jekyll. As time went through, started using OrgMode and later Obsidian.</p>
         <p>I found that to be the great resource available to do what OrgMode only dreamed of: having all your life and projects managed over plain-text.</p>
@@ -32,6 +33,7 @@ class ArticlesController < ApplicationController
       slug: "the-importance-of-geographic-data-in-contemporary-research",
       description: "What Geographic Information Systems (GIS) means for the future of Public Policy and how we can get there.",
       date: "2022-09-17",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop",
       content: <<~HTML
         <p>When you're building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.</p>
         <p>To make this possible, we needed to squeeze every drop of performance out of the browser possible. And so Animaginary was born.</p>
@@ -56,6 +58,7 @@ class ArticlesController < ApplicationController
       slug: "what-is-technocritique",
       description: "Thoughts about Social Change in an era of extreme complexity.",
       date: "2022-07-14",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
       content: <<~HTML
         <p>One of the greatest problems that cause political conflict is Social Reproduction.</p>
         <h2>What is Neoreaction?</h2>
