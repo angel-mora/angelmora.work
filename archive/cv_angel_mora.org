@@ -1,0 +1,200 @@
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: ./
+
+#+TITLE: Angel Mora
+#+DATE: 2021-09-02
+#+HUGO_TAGS: portfolio
+
+** ABOUT ME
+
+I'm a passionate Philosopher and Full Stack Developer with more than
+three years of programming to solve problems. I love Open Source, GIS
+Web Development, and Data Visualization. Also, love Networks and
+interactive Graphs Visualization. My work experience goes from Customer
+Service, passing through Data Cleaning/Visualization/Analysis, MapBox
+API mapping, Stripe API paywalls, and Business Intelligence.
+
+** SKILLS
+   :PROPERTIES:
+   :CUSTOM_ID: skills
+   :END:
+
+| - Experience handling scaled situations interacting with customers.                                | - Capable of set features, create Specs, and follow TDD, DRY and SOLID principles for a Rails-based web application through Git flow.   |
+|                                                                                                    |                                                                                                                                         |
+| - Proficiency to self-organize and self-learn in a strategic way through tools like Trello/Jira.   | - Mastery at using Authentication/Authorization gems and build complex data models through ERD diagrams.                                |
+|                                                                                                    |                                                                                                                                         |
+| - Ability to run a small team to deliver an MVP and negotiate and prioritize deliveries.           | - Use of best practices like handling media in AWS3, developing with Docker compose, and setting GitHub Actions for CI/CD               |
+|                                                                                                    |                                                                                                                                         |
+| - Knowledgable at PostGIS data, +2 years with Leaflet.js API                                       | - Skilled at Linux troubleshooting                                                                                                      |
+                                                                                                                                                                                                                                              
+
+** PROFESSIONAL EXPERIENCE
+   :PROPERTIES:
+   :CUSTOM_ID: professional-experience
+   :END:
+
+*/Risk Management and Crime Analysis Company/ SEPROBAN*
+
+/October 2018 - Currently/
+
+Ruby on Rails development to simplify Data Cleaning, Seeding, and
+Analysis with the use of rake tasks. Enabled /CSV/Excel/ upload and
+download processes for automatic reporting. Create charts with Chartkick
+gem, set serializers to seed Leaflet maps, import processes with Active
+Record Import to handle SQL batches when seeding. Authentication with
+Devise. Web Development Application to visualize Crime Data and create
+automated Business Reports.
+
+Public Javascript Leaflet map for approx. 50,000 rows. Sample of
+development in GitHub link: https://github.com/angel-mora/Leaflet-tests.
+
+Use of R programming to publish RMarkdown and LaTeX reports. RLeaflet,
+RPubs, and some other Data Analysis libraries.
+
+Use of Python programming to transform DBF data to CSV, run dockerized
+OSINT services. Use of Jupyter Notebooks for scripts documentation.
+
+*Technologies:* /Oracle PL-SQL, Excel, Azure DevOps, Leaflet.js,
+Reveal.js, Python Jupyter Notebooks, R, Rmarkdown, emacs org-mode,
+LaTeX, Pandoc, Golang/Hugo, Ruby on Rails, PostGIS, RSpec for TDD,
+GitHub Actions/Boards, Heroku, AWS3, Kali Linux/Raspberry, Ngrok and
+Webpack parallel development server with docker-compose./
+
+*/[PRIVATE CUSTOMER]/ Equity Crowdfunding Financial App*
+
+/March 2021 -- July 2021/
+
+Ruby on Rails backend, React front-end application for Crowdfunding
+American-based LLC Startup to promote financial opportunities to
+Hispanic and Latinamerican SMEs. Create Data Model ERD, model
+associations, and developed API to connect with React. Create a UI/UX
+optimized website working with three Microverse developers and a Figma
+designer to build MVP for a Crowdfunding project. My role as a Product
+Owner was to set up attainable features to work over each week and
+follow Stand-Up meetings to negotiate with Team Lead about CX
+requirements.
+
+*Technologies:* /Postgres, Ruby on Rails, React, Docker, GitHub Actions,
+TDD, Stripe API, Figma./
+
+*/Nutrition App/ Baos*
+
+/January 2021 -- July 2021/
+
+Ruby on Rails application with React components to improve UI/UX.
+Transform an Excel spreadsheet and two Business Requirements PDF
+Documentation into Heroku deployed Rails-React application. Worked with
+two more Microverse students in the development of a full-featured MVP
+with /authentication/ and /authorization/. Implemented features over the
+User model, set Authentication/Authorization, and connect application
+logic with Stripe for a subscription model. Multiple packages with
+extending features, conditioned by Stripe paywall.
+[[[https://baos-life.herokuapp.com/][https://baos-life.herokuapp.com/]]
+
+*Technologies:* Postgres/, Ruby on Rails, React, Docker, GitHub Actions,
+TDD, Stripe API. Ngrok and Webpack development server with
+docker-compose./
+
+*/Call Center/ AT&T Parque Toreo*
+
+/April 2019 -- October 2019/
+
+*Sales Representative -- National Business (South-West Region)*
+
+Use of Excel for Sales Reporting and SQL Queries.
+
+Use of CLIs to manage landline connections.
+
+Worked in Virtualized Environment.
+
+/*Technologies:* SQL, Excel and General Office Suite, Microsoft
+Outlook./
+
+*/Personal Project/ Revista Disonancias*
+
+/July 2018 - October 2020/
+
+Automate writing processes with Pandoc and GitHub. Hosted on GitHub
+Pages and Jekyll. Use of Emacs Org-mode to automate cross-format content
+creation with Reveal.js and GoLang/Hugo static generator.
+[[[https://disonancias.org/][https://disonancias.org/]]
+
+*Technologies:* /Pandoc, Debian, bash scripts, Git flow for GitHub
+Pages, GoLang/Hugo, Ruby/Jekyll, HTML-CSS-JS, SASS, Bootstrap with
+Jquery, Trello./
+
+*/Consulting Company/ Gerencia del Poder*
+
+/January 2018 -- July 2018/
+
+Use of LaTeX and R to deliver products.
+
+*Technologies:* /Zettlr (Markdown editor), LaTeX, Overleaf, BibTeX,
+Zotero, Trello, Slack./
+
+*/Call Center/ TeleTech*
+
+/June 2017 -- January 2018/
+
+*Dish Campaign -- CX Service Agent and Tech Support*
+
+CX Service and Tech Support (Common Troubleshooting).
+
+*Technologies:* /Virtual Box, Troubleshooting Techniques*.*/
+
+** EDUCATION
+   :PROPERTIES:
+   :CUSTOM_ID: education
+   :END:
+
+*Microverse Full-Stack Developer Bootcamp*
+
+/January 2020 -- July 2021/
+
+Full Stack Credentials for HTML/CSS, SQL, and Ruby on Rails.
+
+Creation of bots and web scrapping with Ruby. Telegram API, Nokogiri
+gem.
+
+Developed six Rails projects to demonstrate mastery at handling both
+Rails 5 and 6.
+
+A remote software development program with less than 4% of applicants
+accepted.
+
+Ruby on Rails final project:
+https://github.com/angel-mora/spectech-blog/
+
+*Technologies:* /HTML/CSS/JS, Ruby on Rails, React-Redux, GitHub,
+Heroku, Data Structures./
+
+*Universidad Nacional Autónoma de México*
+
+/January 2015 -- December 2018/
+
+Major in Philosophy. Strong core in Analytical Philosophy, really close
+to Logic Foundations, Set Theory, and Discrete Math.
+
+*Technologies:* GitHub, Pandoc, LaTeX, BibTex, Zotero, and Markdown.
+
+*Instituto Tecnológico Autónomo de México (ITAM)*
+
+/August 2013 -- January 2015/
+
+Economics, Academic Writing and Social Sciences Data Analysis.
+
+*Technologies:* /Rstudio,Wolfram, Stata./
+  
+** LANGUAGES
+   :PROPERTIES:
+   :CUSTOM_ID: languages
+   :END:
+
+| Spanish: Native      |
+|                      |
+| English: Proficiency |
+|                      |
+| French: B1           |
+|----------------------|
+|                      |
+|                      |

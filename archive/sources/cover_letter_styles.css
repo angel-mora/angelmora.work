@@ -1,0 +1,190 @@
+/*
+ * Professional Cover Letter Stylesheet
+ * Design: Clean, professional business letter format
+ * Optimized for: PDF export and professional presentation
+ */
+
+:root {
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  --color-text: #1a1a1a;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6b7280;
+  --color-accent: #2563eb;
+  --color-border: #e5e7eb;
+  --color-bg: #ffffff;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 11pt;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 1in;
+}
+
+/* Contact Information Header */
+.contact-info {
+  text-align: center;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-info p:first-child {
+  font-size: 16pt;
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+
+.contact-info p:nth-child(2) {
+  font-size: 12pt;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.5em;
+}
+
+.contact-info p:last-child {
+  font-size: 10pt;
+  color: var(--color-text-secondary);
+}
+
+/* Headers */
+h1 {
+  font-size: 16pt;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 13pt;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+h3 {
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+/* First paragraph after header - greeting */
+.contact-info + p {
+  margin-top: 1.5em;
+}
+
+/* Lists */
+ul {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Emphasis */
+strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+em {
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+/* Signature area */
+p:last-of-type {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* P.S. formatting */
+p:contains("P.S.") {
+  margin-top: 1.5em;
+  font-size: 10pt;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: 9pt;
+  color: var(--color-text-muted);
+}
+
+footer a {
+  color: var(--color-accent);
+  margin-left: 1em;
+}
+
+/* Print styles */
+@media print {
+  body {
+    padding: 0.75in;
+    font-size: 11pt;
+  }
+  
+  .no-print { 
+    display: none !important; 
+  }
+  
+  a { 
+    color: var(--color-text) !important; 
+    text-decoration: none !important;
+  }
+  
+  h2 { 
+    margin-top: 1.25em; 
+  }
+  
+  .contact-info {
+    margin-bottom: 1.5em;
+  }
+}
+
+@page {
+  size: letter;
+  margin: 0.75in;
+}
