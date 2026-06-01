@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@theme {
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-rojo-cta: #DC2626;
+  --color-gris-medio: #717182;
+  --color-off-white: #FAFAFA;
+  --color-amarillo: #FFD700;
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-zinc-50 text-zinc-600 dark:bg-black dark:text-zinc-400;
+    font-family: var(--font-body);
+  }
+
+  .dark body {
+    @apply bg-black text-zinc-400;
+  }
+}
+
+@layer components {
+  .container-outer {
+    @apply sm:px-8;
+  }
+
+  .container-outer > div {
+    @apply mx-auto w-full max-w-7xl lg:px-8;
+  }
+
+  .container-inner {
+    @apply relative px-4 sm:px-8 lg:px-12;
+  }
+
+  .container-inner > div {
+    @apply mx-auto max-w-2xl lg:max-w-5xl;
+  }
+
+  .btn-gumroad {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+    background: var(--color-rojo-cta);
+    border: none;
+    padding: 6px 14px;
+    box-shadow: 3px 3px 0px #000;
+    transition: all 0.1s ease;
+  }
+
+  .btn-gumroad:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px #000;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
