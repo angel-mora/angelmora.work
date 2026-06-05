@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: mysecondbrain_production
-  username: mysecondbrain
-  password: <%= ENV["MYSECONDBRAIN_DATABASE_PASSWORD"] %>
+  database: angelmora_work_production
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  host: <%= ENV["DB_HOST"] %>
