@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full antialiased">
   <head>
-    <title><%= content_for(:title) || "Angel Mora - My Second Brain" %></title>
+    <title><%= content_for(:title) || "Angel Mora - Senior Rails Developer" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <script>
@@ -25,32 +25,23 @@
     </script>
   </head>
 
-  <body class="flex h-full bg-zinc-50 dark:bg-black" data-controller="mobile-menu">
-    <div class="flex w-full">
-      <!-- Background column -->
-      <div class="fixed inset-0 flex justify-center sm:px-8">
-        <div class="flex w-full max-w-7xl lg:px-8">
-          <div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
-        </div>
-      </div>
-
-      <div class="relative flex w-full flex-col">
+  <body class="min-h-full bg-white dark:bg-black" data-controller="mobile-menu">
+      <div class="relative flex min-h-screen w-full flex-col">
         <%= render "shared/header" %>
         <main class="flex-auto">
           <% if notice %>
             <div class="container-outer"><div class="container-inner"><div class="mx-auto max-w-2xl lg:max-w-5xl mt-6">
-              <div class="rounded-lg bg-teal-50 dark:bg-teal-900/20 p-3 text-sm text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800"><%= notice %></div>
+              <div class="border border-emerald-900 bg-emerald-100 p-3 text-sm text-emerald-950"><%= notice %></div>
             </div></div></div>
           <% end %>
           <% if alert %>
             <div class="container-outer"><div class="container-inner"><div class="mx-auto max-w-2xl lg:max-w-5xl mt-6">
-              <div class="rounded-lg bg-red-50 dark:bg-red-900/20 p-3 text-sm text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800"><%= alert %></div>
+              <div class="border border-red-900 bg-red-100 p-3 text-sm text-red-950"><%= alert %></div>
             </div></div></div>
           <% end %>
           <%= yield %>
         </main>
         <%= render "shared/footer" %>
       </div>
-    </div>
   </body>
 </html>

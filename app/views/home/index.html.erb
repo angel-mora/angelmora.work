@@ -1,64 +1,186 @@
-<%= render ContainerComponent.new(class: "mt-9") do |c| %>
-  <div class="max-w-2xl">
-    <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-      Fullstack Ruby on Rails Developer
-    </h1>
-    <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-      I'm Angel, a developer living in Mexico City. Building my second brain — one note at a time.
-    </p>
-    <div class="mt-6 flex gap-6">
-      <a href="https://twitter.com/angelmoradev" class="group -m-1 p-1" aria-label="Follow on Twitter">
-        <svg class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.055 7.983c.012.175.012.349.012.523 0 5.335-3.967 11.483-11.213 11.483A11.144 11.144 0 0 1 0 18.197a7.855 7.855 0 0 0 1.413.199 7.892 7.892 0 0 0 4.91-1.708 3.96 3.96 0 0 1-3.697-2.753 3.955 3.955 0 0 0 1.785-.068 3.954 3.954 0 0 1-3.168-3.88v-.05a3.92 3.92 0 0 0 1.788.498A3.958 3.958 0 0 1 .787 5.64a11.225 11.225 0 0 0 8.15 4.143 3.96 3.96 0 0 1 1.201-5.278A3.953 3.953 0 0 1 15.9 6.692a7.806 7.806 0 0 0 2.51-.965 3.962 3.962 0 0 1-1.74 2.188A7.9 7.9 0 0 0 19.4 7.07a8.38 8.38 0 0 1-1.948 2.056z"/>
-        </svg>
-      </a>
-      <a href="https://github.com/angel-mora" class="group -m-1 p-1" aria-label="Follow on GitHub">
-        <svg class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.475 2 2 6.475 2 12c0 4.98 3.225 9.21 7.688 10.695.56.1.768-.245.768-.545v-1.856c-3.13.675-3.793-1.5-3.793-1.5-.51-1.293-1.245-1.635-1.245-1.635-1.015-.695.075-.695.075-.695 1.125.075 1.72 1.155 1.72 1.155 1.005 1.715 2.64 1.22 3.285.93.1-.735.39-1.22.705-1.505-2.46-.285-5.04-1.23-5.04-5.46 0-1.2.42-2.19 1.11-2.955-.12-.285-.48-1.41.105-2.94 0 0 .915-.3 3 1.125A10.44 10.44 0 0 1 12 6.84c.93.005 1.865.12 2.745.36 2.085-1.425 3-1.125 3-1.125.585 1.53.225 2.655.105 2.94.69.765 1.105 1.755 1.105 2.955 0 4.245-2.585 5.175-5.04 5.46.39.345.735 1.005.735 2.04v3.015c0 .3.2.65.775.545C18.78 21.21 22 16.98 22 12c0-5.525-4.475-10-10-10z"/>
-        </svg>
-      </a>
-      <a href="https://linkedin.com/in/angelmoradev" class="group -m-1 p-1" aria-label="Follow on LinkedIn">
-        <svg class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M5.25 8.25H1.5v13.5h3.75V8.25zM3.375 6A2.625 2.625 0 1 0 3.375.75a2.625 2.625 0 0 0 0 5.25zM22.5 21.75h-3.75v-6.6c0-1.575-.03-3.6-2.19-3.6-2.19 0-2.527 1.71-2.527 3.487v6.713H10.5V8.25h3.562v1.845h.052c.495-.935 1.703-1.92 3.495-1.92 3.735 0 4.425 2.46 4.425 5.663v7.912z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-<% end %>
+<% content_for :title, "Angel Mora - Senior Ruby on Rails Developer" %>
 
-<%= render ContainerComponent.new(class: "mt-24 md:mt-28") do |c| %>
-  <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-    <div class="flex flex-col gap-16">
-      <% @articles.each do |article| %>
-        <article class="group relative flex flex-col items-start">
-          <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-          <div class="relative z-10 order-first mb-3 w-full">
-            <img
-              src="<%= article[:image] %>"
-              alt=""
-              class="aspect-[16/9] w-full rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 sm:aspect-[2/1] lg:aspect-[3/2]"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/10 dark:ring-zinc-100/10"></div>
+<%
+  wins = [
+    ["40%", "page load reduction", "Turbo Frames lazy loading at Inktavo / Printavo"],
+    ["45 -> 38", "test suite minutes", "TestProf profiling at Info-Tech Research Group"],
+    ["O(n) -> O(1)", "query paths", "N+1 removal on production flows"],
+    ["120", "hrs/month saved", "30+ Rake automation tasks at SEPROBAN"],
+    ["200K+", "records", "PostGIS and Leaflet.js intelligence tooling"]
+  ]
+
+  roles = [
+    ["Inktavo / Printavo", "Senior Rails Developer", "Sep 2024 - Jul 2025"],
+    ["Info-Tech Research Group", "Rails Developer", "Dec 2021 - Sep 2024"],
+    ["Aleph Risk Intelligence", "Backend Developer", "Oct 2021 - Dec 2021"],
+    ["SEPROBAN", "Rails Developer / Intelligence Analyst", "Oct 2019 - Sep 2021"]
+  ]
+
+  stack = ["Ruby", "Rails", "PostgreSQL", "Redis", "Sidekiq", "Hotwire", "Docker", "AWS", "GraphQL", "React", "PostGIS", "RSpec"]
+
+  contacts = [
+    ["LinkedIn", "linkedin.com/in/angelmoradev", "https://linkedin.com/in/angelmoradev"],
+    ["GitHub", "github.com/angel-mora", "https://github.com/angel-mora"],
+    ["Email", "angelmomaa@gmail.com", "mailto:angelmomaa@gmail.com"]
+  ]
+%>
+
+<section class="brand-container py-8 sm:py-10">
+  <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px]">
+    <div class="brand-card p-5 sm:p-6 lg:p-7">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="brand-section-marker">
+          <span class="brand-section-marker__number">01</span>
+          <span>Portfolio</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="brand-tag brand-tag--success">Available - Remote - UTC-6</span>
+          <span class="brand-tag brand-tag--info">Rails - Hotwire - Jobs</span>
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-5 lg:grid-cols-[2px_minmax(0,1fr)]">
+        <div class="hidden bg-brand lg:block"></div>
+        <div>
+          <h1 class="max-w-4xl font-display text-4xl font-bold leading-[0.96] tracking-[-0.045em] text-black dark:text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            Angel Mora.<br>
+            Senior Ruby on Rails Developer.
+          </h1>
+
+          <p class="mt-5 max-w-3xl text-base leading-7 text-zinc-700 dark:text-zinc-300">
+            6+ years shipping production Rails monoliths: background jobs, Hotwire UX, PostgreSQL at scale, and AI-agent integrations. Philosophy background, CS graduate work, and strong product judgment.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <%= link_to "Download CV", "/angel_mora_cv.pdf", class: "brand-button brand-button--brand", download: true %>
+            <%= link_to "Recruiter intro", "https://calendly.com/angel-mora", class: "brand-button brand-button--outline" %>
+            <%= link_to "Consulting call", "mailto:angelmomaa@gmail.com?subject=Rails%20technical%20consultation", class: "brand-button brand-button--outline" %>
           </div>
-          <%= render Card::EyebrowComponent.new(as: "time", datetime: article[:date], decorate: true) { Date.parse(article[:date]).strftime("%B %-d, %Y") } %>
-          <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-            <%= link_to article_path(article[:slug]) do %>
-              <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-              <span class="relative z-10"><%= article[:title] %></span>
-            <% end %>
-          </h2>
-          <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"><%= article[:description] %></p>
-          <div class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
-            Read article
-            <svg viewBox="0 0 16 16" fill="none" class="ml-1 h-4 w-4 stroke-current"><path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </article>
-      <% end %>
+        </div>
+      </div>
+
+      <div class="mt-7 grid grid-cols-2 border border-black dark:border-white sm:grid-cols-4">
+        <div class="border-b border-r border-black p-3 dark:border-white sm:border-b-0">
+          <div class="font-mono text-2xl font-semibold tracking-[-0.04em] text-black dark:text-white">6+</div>
+          <div class="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Years Rails</div>
+        </div>
+        <div class="border-b border-black p-3 dark:border-white sm:border-b-0 sm:border-r">
+          <div class="font-mono text-2xl font-semibold tracking-[-0.04em] text-black dark:text-white">4</div>
+          <div class="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Companies</div>
+        </div>
+        <div class="border-r border-black p-3 dark:border-white sm:border-r">
+          <div class="font-mono text-2xl font-semibold tracking-[-0.04em] text-black dark:text-white">5-8</div>
+          <div class="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Rails versions</div>
+        </div>
+        <div class="p-3">
+          <div class="font-mono text-2xl font-semibold tracking-[-0.04em] text-black dark:text-white">CST</div>
+          <div class="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Timezone</div>
+        </div>
+      </div>
+
+      <div class="mt-5 grid grid-cols-2 gap-3 xl:grid-cols-5">
+        <% wins.each do |metric, label, context| %>
+          <article class="brand-panel p-3">
+            <div class="font-mono text-lg font-semibold tracking-[-0.04em] text-black dark:text-white"><%= metric %></div>
+            <h2 class="mt-2 text-xs font-semibold uppercase tracking-[0.03em] text-black dark:text-white"><%= label %></h2>
+            <p class="mt-1 text-xs leading-5 text-zinc-600 dark:text-zinc-400"><%= context %></p>
+          </article>
+        <% end %>
+      </div>
     </div>
-    <div class="space-y-10 lg:pl-16 xl:pl-24">
-      <%= render NewsletterComponent.new %>
-      <%= render ResumeComponent.new %>
+
+    <aside class="grid gap-4">
+      <div class="brand-panel p-5">
+        <p class="brand-kicker">Work modes</p>
+        <div class="mt-4 grid gap-3">
+          <%= link_to "https://calendly.com/angel-mora", class: "brand-card block p-4 transition hover:bg-zinc-100 dark:hover:bg-zinc-900" do %>
+            <div class="brand-kicker">Recruiter intro</div>
+            <div class="mt-2 text-lg font-semibold text-black dark:text-white">30 min - Free</div>
+            <p class="mt-1 text-xs leading-5 text-zinc-600 dark:text-zinc-400">Role fit, compensation, timeline, and availability.</p>
+          <% end %>
+
+          <%= link_to "mailto:angelmomaa@gmail.com?subject=Rails%20technical%20consultation", class: "brand-card block p-4 transition hover:bg-zinc-100 dark:hover:bg-zinc-900" do %>
+            <div class="brand-kicker">Consulting client</div>
+            <div class="mt-2 text-lg font-semibold text-black dark:text-white">60 min - Paid</div>
+            <p class="mt-1 text-xs leading-5 text-zinc-600 dark:text-zinc-400">Rails architecture, performance, Sidekiq, Hotwire, AI systems.</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="brand-card p-5">
+        <p class="brand-kicker">Contact</p>
+        <div class="mt-3 space-y-2 text-sm">
+          <% contacts.each do |label, value, href| %>
+            <div class="grid grid-cols-[78px_minmax(0,1fr)] gap-3 border-t border-zinc-300 pt-2 dark:border-zinc-700">
+              <dt class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500"><%= label %></dt>
+              <dd class="truncate"><%= link_to value, href, class: "text-black hover:underline decoration-brand decoration-2 underline-offset-4 dark:text-white" %></dd>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="brand-card p-5">
+        <p class="brand-kicker">Core stack</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <% stack.each do |tool| %>
+            <span class="border border-zinc-300 px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.1em] text-zinc-700 dark:border-zinc-700 dark:text-zinc-300"><%= tool %></span>
+          <% end %>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="brand-container border-t border-black py-8 dark:border-white lg:py-10" id="about">
+  <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px]">
+    <div class="brand-card p-5">
+      <div class="flex items-center justify-between gap-4">
+        <div class="brand-section-marker">
+          <span class="brand-section-marker__number">02</span>
+          <span>Experience</span>
+        </div>
+        <p class="brand-kicker hidden sm:block">Compact track record</p>
+      </div>
+      <div class="mt-4 overflow-x-auto">
+        <table class="brand-table min-w-[640px]">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Role</th>
+              <th>Period</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% roles.each do |company, role, period| %>
+              <tr>
+                <td class="font-semibold text-black dark:text-white"><%= company %></td>
+                <td><%= role %></td>
+                <td class="font-mono text-xs uppercase tracking-[0.08em] text-zinc-500"><%= period %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="brand-panel p-5">
+      <p class="brand-kicker">What you get</p>
+      <h2 class="mt-3 font-display text-2xl font-semibold tracking-[-0.04em] text-black dark:text-white">Senior Rails execution without unnecessary architecture.</h2>
+      <p class="mt-3 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+        I prefer monoliths over microservices, spec-driven development, and operational simplicity. Useful for teams that need production Rails work, performance cleanup, or technical judgment before building.
+      </p>
+      <div class="mt-4 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-1">
+        <div class="border-t border-zinc-300 pt-2 dark:border-zinc-700">
+          <span class="brand-kicker">Education</span>
+          <p class="mt-1 text-black dark:text-white">B.A. Philosophy - UNAM</p>
+          <p class="text-zinc-500">M.S. CS &amp; Telecom - UTEL</p>
+        </div>
+        <div class="border-t border-zinc-300 pt-2 dark:border-zinc-700">
+          <span class="brand-kicker">Artifact</span>
+          <p class="mt-1 text-black dark:text-white">Gallery Space + Technical Grid</p>
+          <p class="text-zinc-500">Amber names CTA and neon trace only.</p>
+        </div>
+      </div>
     </div>
   </div>
-<% end %>
+</section>

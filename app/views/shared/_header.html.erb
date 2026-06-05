@@ -1,77 +1,53 @@
-<header class="pointer-events-none relative z-50 flex flex-none flex-col" id="site-header">
-  <% is_home = controller_name == "home" && action_name == "index" %>
+<header class="relative z-50 flex flex-none flex-col border-b border-black bg-white dark:border-white dark:bg-black" id="site-header">
+  <div class="brand-container flex items-center justify-between gap-6 py-4">
+    <%= link_to root_path, class: "font-mono text-xs font-semibold uppercase tracking-[0.14em] text-black dark:text-white" do %>
+      [ST] <span class="text-zinc-500 dark:text-zinc-400">Angel Mora</span>
+    <% end %>
 
-  <div class="top-0 z-10 h-16 pt-6" style="position: sticky;">
-    <div class="container-outer">
-      <div class="container-inner">
-        <div class="relative flex gap-4">
-          <div class="flex flex-1">
-            <% unless is_home %>
-              <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
-                <%= link_to root_path, class: "pointer-events-auto" do %>
-                  <div class="h-9 w-9 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden flex items-center justify-center">
-                    <span class="text-lg font-bold text-zinc-600 dark:text-zinc-300">A</span>
-                  </div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+    <nav class="hidden md:flex">
+      <ul class="flex items-center text-xs font-semibold uppercase tracking-[0.08em] text-zinc-600 dark:text-zinc-300">
+        <%= render NavLinkComponent.new(name: "About", href: about_path, current: current_page?(about_path)) %>
+        <%= render NavLinkComponent.new(name: "Articles", href: articles_path, current: current_page?(articles_path)) %>
+        <%= render NavLinkComponent.new(name: "Projects", href: projects_path, current: current_page?(projects_path)) %>
+        <%= render NavLinkComponent.new(name: "Vault", href: vault_path, current: current_page?(vault_path)) %>
+      </ul>
+    </nav>
 
-          <nav class="hidden md:flex pointer-events-auto">
-            <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-              <%= render NavLinkComponent.new(name: "About", href: about_path, current: current_page?(about_path)) %>
-              <%= render NavLinkComponent.new(name: "Articles", href: articles_path, current: current_page?(articles_path)) %>
-              <%= render NavLinkComponent.new(name: "Projects", href: projects_path, current: current_page?(projects_path)) %>
-              <%= render NavLinkComponent.new(name: "Vault", href: vault_path, current: current_page?(vault_path)) %>
-            </ul>
-          </nav>
+    <div class="flex items-center gap-2">
+      <%= link_to "Book a call", "https://calendly.com/angel-mora", class: "hidden border-2 border-black bg-brand px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-brand-hover md:inline-flex" %>
 
-          <div class="flex justify-end md:flex-1">
-            <div class="pointer-events-auto" data-controller="theme">
-              <button type="button" data-action="theme#toggle"
-                class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
-                aria-label="Toggle theme">
-                <svg class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z" />
-                  <path d="M12.25 3v1.5M21.5 12.25H20M18.791 18.791l-1.06-1.06M18.791 5.709l-1.06 1.06M12.25 20v1.5M4.5 12.25H3M6.77 6.77 5.709 5.709M6.77 17.73l-1.061 1.061" fill="none" />
-                </svg>
-                <svg class="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block dark:group-hover:stroke-zinc-400" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z" />
-                </svg>
-              </button>
-            </div>
-
-            <button type="button" data-action="mobile-menu#open"
-              class="group ml-2 flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20 md:hidden pointer-events-auto">
-              Menu
-              <svg class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" viewBox="0 0 8 6" fill="none" aria-hidden="true">
-                <path d="M1.75 1.75 4 4.25l2.25-2.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
+      <div data-controller="theme">
+        <button type="button" data-action="theme#toggle"
+          class="border-2 border-black bg-white px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-zinc-100 dark:border-white dark:bg-black dark:text-white dark:hover:bg-zinc-900"
+          aria-label="Toggle theme">
+          Theme
+        </button>
       </div>
+
+      <button type="button" data-action="mobile-menu#open"
+        class="border-2 border-black bg-white px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-zinc-100 dark:border-white dark:bg-black dark:text-white dark:hover:bg-zinc-900 md:hidden">
+        Menu
+      </button>
     </div>
   </div>
 </header>
 
 <div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
-  <div id="mobile-menu-overlay" class="fixed inset-0 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80"></div>
-  <div id="mobile-menu-panel" class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800">
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60"></div>
+  <div id="mobile-menu-panel" class="fixed inset-x-4 top-4 z-50 origin-top border-2 border-black bg-white p-6 dark:border-white dark:bg-black">
     <div class="flex flex-row-reverse items-center justify-between">
-      <button type="button" data-action="mobile-menu#close" aria-label="Close menu" class="-m-1 p-1">
-        <svg class="h-6 w-6 text-zinc-500 dark:text-zinc-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5" />
-        </svg>
+      <button type="button" data-action="mobile-menu#close" aria-label="Close menu" class="border border-black px-2 py-1 font-mono text-xs uppercase tracking-[0.1em] text-black dark:border-white dark:text-white">
+        Close
       </button>
-      <h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">Navigation</h2>
+      <h2 class="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-zinc-600 dark:text-zinc-400">Navigation</h2>
     </div>
     <nav class="mt-6">
-      <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-        <li><%= link_to "About", about_path, class: "block py-2", data: { action: "mobile-menu#close" } %></li>
-        <li><%= link_to "Articles", articles_path, class: "block py-2", data: { action: "mobile-menu#close" } %></li>
-        <li><%= link_to "Projects", projects_path, class: "block py-2", data: { action: "mobile-menu#close" } %></li>
-        <li><%= link_to "Vault", vault_path, class: "block py-2", data: { action: "mobile-menu#close" } %></li>
+      <ul class="-my-2 divide-y divide-zinc-300 font-mono text-sm uppercase tracking-[0.08em] text-black dark:divide-zinc-700 dark:text-white">
+        <li><%= link_to "About", about_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
+        <li><%= link_to "Articles", articles_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
+        <li><%= link_to "Projects", projects_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
+        <li><%= link_to "Vault", vault_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
+        <li><%= link_to "Book a call", "https://calendly.com/angel-mora", class: "mt-4 block border-2 border-black bg-brand px-3 py-3 text-center text-black", data: { action: "mobile-menu#close" } %></li>
       </ul>
     </nav>
   </div>

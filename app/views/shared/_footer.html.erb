@@ -1,18 +1,16 @@
-<footer class="mt-32 flex-none">
-  <div class="container-outer">
-    <div class="border-t border-zinc-100 pb-16 pt-10 dark:border-zinc-700/40">
-      <div class="container-inner">
-        <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
-          <div class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-            <%= link_to "About", about_path, class: "transition hover:text-teal-500 dark:hover:text-teal-400" %>
-            <%= link_to "Projects", projects_path, class: "transition hover:text-teal-500 dark:hover:text-teal-400" %>
-            <%= link_to "Vault", vault_path, class: "transition hover:text-teal-500 dark:hover:text-teal-400" %>
-          </div>
-          <p class="text-sm text-zinc-400 dark:text-zinc-500">
-            &copy; <%= Date.today.year %> Angel Mora. All rights reserved.
-          </p>
-        </div>
-      </div>
+<footer class="mt-16 flex-none border-t border-black bg-white py-10 dark:border-white dark:bg-black">
+  <div class="brand-container flex flex-col justify-between gap-6 text-xs sm:flex-row sm:items-center">
+    <div class="font-mono font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
+      SPECULATIVE TECHNOLOGIES - BRAND IDENTITY MANUAL - v2.1
     </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.08em] text-black dark:text-white">
+      <%= link_to "GitHub", "https://github.com/angel-mora", class: "hover:underline decoration-brand decoration-2 underline-offset-4" %>
+      <%= link_to "LinkedIn", "https://linkedin.com/in/angelmoradev", class: "hover:underline decoration-brand decoration-2 underline-offset-4" %>
+      <%= link_to "Email", "mailto:angelmomaa@gmail.com", class: "hover:underline decoration-brand decoration-2 underline-offset-4" %>
+      <%= link_to "CV", "/angel_mora_cv.pdf", class: "hover:underline decoration-brand decoration-2 underline-offset-4" %>
+    </div>
+    <p class="font-mono text-xs uppercase tracking-[0.08em] text-zinc-500 dark:text-zinc-400">
+      &copy; <%= Date.today.year %> - Mexico City
+    </p>
   </div>
 </footer>
