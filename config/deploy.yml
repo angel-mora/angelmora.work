@@ -12,7 +12,7 @@ servers:
 # Enable SSL auto certification via Let's Encrypt
 proxy:
   ssl: true
-  host: angelmora.dev
+  host: angelmora.work
   app_port: 80
 
 # Credentials for Docker Hub.
