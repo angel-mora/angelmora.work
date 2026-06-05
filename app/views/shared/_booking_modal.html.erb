@@ -1,0 +1,38 @@
+<div class="booking-modal__overlay hidden" data-booking-modal-target="overlay" data-action="click->booking-modal#close"></div>
+
+<section class="booking-modal hidden" data-booking-modal-target="panel" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+  <div class="booking-modal__head">
+    <h2 id="booking-modal-title">Book a meeting</h2>
+    <button class="booking-modal__close" type="button" aria-label="Close" data-action="booking-modal#close">X</button>
+  </div>
+
+  <div class="booking-modal__tabs">
+    <button class="booking-modal__tab active" type="button" data-booking-modal-target="recruiterTab" data-action="booking-modal#select" data-booking-modal-type-param="recruiter">
+      Recruiter / hiring
+      <span>Free - 30 min</span>
+    </button>
+    <button class="booking-modal__tab" type="button" data-booking-modal-target="consultingTab" data-action="booking-modal#select" data-booking-modal-type-param="consulting">
+      Technical consultation
+      <span>Paid - 60 min</span>
+    </button>
+  </div>
+
+  <div class="booking-modal__embed" data-booking-modal-target="recruiterBody">
+    <div class="booking-modal__placeholder">
+      CALENDLY EMBED - RECRUITER<br><br>
+      <a href="https://calendly.com/angel-mora" target="_blank" rel="noopener">Open in new tab</a>
+    </div>
+  </div>
+
+  <div class="booking-modal__embed hidden" data-booking-modal-target="consultingBody">
+    <div class="booking-modal__placeholder">
+      CALENDLY EMBED - CONSULTATION<br><br>
+      <a href="https://calendly.com/angel-mora" target="_blank" rel="noopener">Open in new tab</a>
+    </div>
+  </div>
+
+  <div class="booking-modal__context hidden" data-booking-modal-target="context">
+    <label for="booking-context">What do you want to cover? Helps me prepare.</label>
+    <textarea id="booking-context" placeholder="Example: We need help migrating a Rails 5 monolith to Rails 7 with Hotwire."></textarea>
+  </div>
+</section>

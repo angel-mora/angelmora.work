@@ -1,7 +1,7 @@
 <header class="relative z-50 flex flex-none flex-col border-b border-black bg-white dark:border-white dark:bg-black" id="site-header">
-  <div class="brand-container flex items-center justify-between gap-6 py-4">
+  <div class="brand-container flex items-center justify-between gap-5 py-3">
     <%= link_to root_path, class: "font-mono text-xs font-semibold uppercase tracking-[0.14em] text-black dark:text-white" do %>
-      [ST] <span class="text-zinc-500 dark:text-zinc-400">Angel Mora</span>
+      <mark class="bg-brand px-1 text-black">[ST]</mark> <span class="text-zinc-500 dark:text-zinc-400">Angel Mora</span>
     <% end %>
 
     <nav class="hidden md:flex">
@@ -14,13 +14,18 @@
     </nav>
 
     <div class="flex items-center gap-2">
-      <%= link_to "Book a call", "https://calendly.com/angel-mora", class: "hidden border-2 border-black bg-brand px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-brand-hover md:inline-flex" %>
+      <button type="button" class="hidden border-2 border-black bg-brand px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-brand-hover md:inline-flex" data-action="booking-modal#open" data-booking-modal-type-param="recruiter">Book a call</button>
 
       <div data-controller="theme">
         <button type="button" data-action="theme#toggle"
-          class="border-2 border-black bg-white px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-zinc-100 dark:border-white dark:bg-black dark:text-white dark:hover:bg-zinc-900"
-          aria-label="Toggle theme">
-          Theme
+          data-theme-target="switch"
+          class="theme-switch"
+          role="switch"
+          aria-label="Toggle color mode"
+          aria-checked="false">
+          <span class="theme-switch__label">Day</span>
+          <span class="theme-switch__track"><span class="theme-switch__knob"></span></span>
+          <span class="theme-switch__label">Night</span>
         </button>
       </div>
 
@@ -47,7 +52,7 @@
         <li><%= link_to "Articles", articles_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
         <li><%= link_to "Projects", projects_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
         <li><%= link_to "Vault", vault_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
-        <li><%= link_to "Book a call", "https://calendly.com/angel-mora", class: "mt-4 block border-2 border-black bg-brand px-3 py-3 text-center text-black", data: { action: "mobile-menu#close" } %></li>
+        <li><button type="button" class="mt-4 block w-full border-2 border-black bg-brand px-3 py-3 text-center text-black" data-action="booking-modal#open mobile-menu#close" data-booking-modal-type-param="recruiter">Book a call</button></li>
       </ul>
     </nav>
   </div>
