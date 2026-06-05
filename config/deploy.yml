@@ -53,7 +53,7 @@ accessories:
   db:
     image: postgres:17
     host: 5.78.202.225
-    port: 5433
+    port: "5433:5432"
     env:
       clear:
         POSTGRES_USER: angelmora_work
