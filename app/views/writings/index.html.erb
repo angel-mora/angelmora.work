@@ -1,5 +1,5 @@
 <% content_for :title, "Writing - Angel Mora" %>
-<%# BRAND artifact: Gallery Space register; Space Grotesk + Lora carry hierarchy; amber names the primary email CTA and neon trace only; neutrals are white/black/zinc with hard rules. %>
+<%# BRAND artifact: Gallery Space register; Space Grotesk + Lora carry hierarchy; amber names CTA and cover rule; neutrals are white/black/zinc with hard rules. %>
 
 <%
   purchase_body = <<~TEXT
@@ -9,69 +9,101 @@
 
     Please send payment instructions and delivery details.
   TEXT
+
+  section_links = [
+    ["01", "Position", "#position"],
+    ["02", "Reader hub", "#reader-hub"],
+    ["03", "Formats", "#formats"],
+    ["04", "$50 mail", "#receive"]
+  ]
 %>
 
 <section class="border-b border-black bg-white dark:border-white dark:bg-black">
-  <div class="brand-container grid gap-10 py-12 sm:py-16 lg:grid-cols-12 lg:gap-12 lg:py-24">
-    <div class="lg:col-span-5">
-      <div class="border-2 border-black bg-black p-4 text-white dark:border-white dark:bg-white dark:text-black">
-        <div class="flex min-h-[520px] flex-col justify-between border border-white p-6 dark:border-black">
-          <div class="flex items-start justify-between gap-8 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-400 dark:text-zinc-600">
-            <span>LEPHUCR</span>
-            <span>La Partida</span>
-          </div>
-          <div>
-            <div class="mb-8 h-24 w-[2px] bg-brand"></div>
-            <p class="font-display text-5xl font-bold leading-none tracking-[-0.05em] sm:text-6xl">
-              Read this to make a real change.
-            </p>
-          </div>
-          <div class="grid grid-cols-2 gap-4 border-t border-white pt-4 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-400 dark:border-black dark:text-zinc-600">
-            <span>Critical action</span>
-            <span class="text-right">Correspondence edition</span>
-          </div>
+  <div class="brand-container grid min-h-[calc(100svh-57px)] gap-8 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
+    <div class="order-2 lg:order-1 lg:col-span-6">
+      <div class="mx-auto w-full max-w-[760px] border-2 border-black bg-zinc-200 p-3 dark:border-white dark:bg-zinc-900">
+        <div class="grid min-h-[460px] border-2 border-black bg-white dark:border-white md:grid-cols-[0.82fr_1fr]">
+          <aside class="hidden border-r-2 border-black bg-white md:flex md:flex-col dark:border-white">
+            <div class="h-1 bg-brand"></div>
+            <div class="flex flex-1 flex-col p-5">
+              <p class="font-display text-[15px] font-semibold leading-snug tracking-[-0.02em] text-black">
+                What are the possibilities of acting from a specific circumstance, in the most uncertain and absurd moment of history?
+              </p>
+              <div class="my-4 h-px bg-black"></div>
+              <p class="text-[12px] leading-6 text-zinc-700">
+                A technocritical position against the confusion between theory and action: state, markets, machines, apparatuses, capture, desire, organization.
+              </p>
+              <div class="my-4 h-px bg-black"></div>
+              <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-black">This book</p>
+              <ul class="mt-3 space-y-2 font-mono text-[10px] leading-5 text-zinc-700">
+                <li>Introduces La Partida as a technocritical position</li>
+                <li>Reads real change through state, capitalism, and markets</li>
+                <li>Frames critical action beyond the theory-praxis split</li>
+                <li>Maps apparatuses of capture and extraction</li>
+              </ul>
+              <div class="mt-auto flex items-end justify-between border-t border-zinc-300 pt-4">
+                <div>
+                  <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-black">La Partida</p>
+                  <p class="font-mono text-[10px] uppercase tracking-[0.09em] text-zinc-500">Collection Apparatuses</p>
+                </div>
+                <div class="h-10 w-16 bg-[repeating-linear-gradient(90deg,#000_0_2px,transparent_2px_5px)]"></div>
+              </div>
+            </div>
+          </aside>
+
+          <article class="grid min-h-[460px] grid-cols-[44px_1fr] bg-white">
+            <aside class="relative flex items-center justify-center border-r border-zinc-300">
+              <div class="absolute left-0 top-0 h-full w-[3px] bg-brand"></div>
+              <span class="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500" style="writing-mode: vertical-rl; transform: rotate(180deg);">
+                LEPHUCR / Technocritique / Apparatuses / Vol. 01
+              </span>
+            </aside>
+            <div class="flex flex-col px-4 py-5 sm:px-6">
+              <div class="border-b-2 border-black pb-3">
+                <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">Angel de Jesus / Read This To Make A Real Change</p>
+              </div>
+              <div class="flex flex-1 flex-col justify-center py-5">
+                <span class="block font-display text-[clamp(2.4rem,7vw,4.8rem)] font-bold uppercase leading-[0.9] tracking-[-0.05em] text-black">Read this</span>
+                <span class="block font-display text-[clamp(2.4rem,7vw,4.8rem)] font-bold uppercase leading-[0.9] tracking-[-0.05em] text-black">to make</span>
+                <span class="block font-display text-[clamp(2.4rem,7vw,4.8rem)] font-bold uppercase leading-[0.9] tracking-[-0.05em] text-black">a real</span>
+                <div class="my-4 h-1 bg-brand"></div>
+                <span class="block font-display text-[clamp(5rem,15vw,10rem)] font-bold uppercase leading-[0.82] tracking-[-0.06em] text-brand">Change</span>
+                <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">and other texts</p>
+              </div>
+              <div class="flex items-end justify-between border-t-2 border-black pt-3">
+                <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-black">Angel de Jesus</p>
+                <p class="text-right font-mono text-[10px] uppercase leading-5 tracking-[0.09em] text-zinc-500">La Partida<br>Collection Apparatuses</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-col justify-center lg:col-span-7 lg:pl-8">
-      <div class="mb-6 flex flex-wrap gap-2">
+    <div class="order-1 flex flex-col justify-center lg:order-2 lg:col-span-6 lg:pl-6">
+      <div class="mb-5 flex flex-wrap gap-2">
         <span class="brand-tag brand-tag--featured">Writing</span>
         <span class="brand-tag brand-tag--info">Reader hub</span>
       </div>
-      <p class="brand-kicker">Angel Mora / Theory, design, art</p>
-      <h1 class="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-black dark:text-white sm:text-7xl lg:text-8xl">
-        LEPHUCR is a book for people who are tired of mistaking discourse for action.
+      <p class="brand-kicker">LEPHUCR / Reader correspondence</p>
+      <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[0.96] tracking-[-0.045em] text-black dark:text-white sm:text-5xl xl:text-6xl">
+        A book for people tired of mistaking discourse for action.
       </h1>
-      <p class="mt-6 max-w-2xl font-reading text-xl leading-8 text-zinc-700 dark:text-zinc-300">
-        A living manuscript about public life, mercantile domination, critical organization, and the painful distance between wanting change and building it.
+      <p class="mt-5 max-w-2xl font-reading text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+        LEPHUCR is the acronym for <span class="font-semibold text-black dark:text-white">LEE ESTO PARA HACER UN CAMBIO REAL</span>. In English: <span class="font-semibold text-black dark:text-white">READ THIS TO MAKE A REAL CHANGE</span>.
       </p>
-      <p class="mt-5 max-w-2xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-        Built from the original LEPHUCR landing: sample chapters, table of contents, interoperable formats, Obsidian/GitHub logic, and the reader hub now published at lephucr.com.
+      <p class="mt-4 max-w-2xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+        A living manuscript about public life, mercantile domination, critical organization, and the painful distance between wanting change and building it. Read first, then write if the object is for you.
       </p>
-      <div class="mt-8 flex flex-wrap items-center gap-4">
+      <div class="mt-7 flex flex-wrap items-center gap-4">
         <%= mail_to @purchase_email, "Receive by email - $50 USD", subject: "Read This To Make A Real Change - $50 USD", body: purchase_body, class: "brand-button brand-button--brand" %>
         <%= link_to "Explore the reader hub", "#reader-hub", class: "brand-button brand-button--outline" %>
       </div>
-      <p class="mt-5 max-w-xl font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
-        Direct, but not a funnel. Read first. Then write if the object is for you.
-      </p>
     </div>
   </div>
 </section>
 
-<nav aria-label="Writing page sections" class="sticky top-0 z-40 border-b border-black bg-white dark:border-white dark:bg-black">
-  <div class="brand-container overflow-x-auto">
-    <ol class="flex min-w-max divide-x divide-black font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-zinc-600 dark:divide-white dark:text-zinc-300">
-      <li><%= link_to "01 Position", "#position", class: "block px-4 py-4 hover:bg-brand hover:text-black" %></li>
-      <li><%= link_to "02 Reader hub", "#reader-hub", class: "block px-4 py-4 hover:bg-brand hover:text-black" %></li>
-      <li><%= link_to "03 Formats", "#formats", class: "block px-4 py-4 hover:bg-brand hover:text-black" %></li>
-      <li><%= link_to "04 $50 mail", "#receive", class: "block px-4 py-4 hover:bg-brand hover:text-black" %></li>
-    </ol>
-  </div>
-</nav>
-
-<section id="position" class="bg-white py-16 dark:bg-black sm:py-24">
+<section id="position" class="bg-white py-20 dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
       <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> Position</span>
@@ -98,7 +130,7 @@
   </div>
 </section>
 
-<section id="reader-hub" class="border-y border-black bg-zinc-50 py-16 dark:border-white dark:bg-zinc-950 sm:py-24">
+<section id="reader-hub" class="border-y border-black bg-zinc-50 py-20 dark:border-white dark:bg-zinc-950 sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
       <span class="brand-section-marker"><span class="brand-section-marker__number">02</span> Reader hub</span>
@@ -137,7 +169,7 @@
   </div>
 </section>
 
-<section id="formats" class="bg-white py-16 dark:bg-black sm:py-24">
+<section id="formats" class="bg-white py-20 dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
       <span class="brand-section-marker"><span class="brand-section-marker__number">03</span> Formats</span>
@@ -146,20 +178,28 @@
       <h2 class="font-display text-4xl font-bold tracking-[-0.04em] text-black dark:text-white sm:text-5xl">
         A book, but also a small distribution system.
       </h2>
-      <div class="mt-10 grid border border-black dark:border-white md:grid-cols-2">
-        <% @deliverables.each_with_index do |(title, description), index| %>
-          <article class="border-b border-black p-6 dark:border-white md:border-r <%= index > 1 ? "md:border-b-0" : "" %> <%= index.odd? ? "md:border-r-0" : "" %>">
-            <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400"><%= format("%02d", index + 1) %></p>
-            <h3 class="mt-4 font-display text-2xl font-bold tracking-[-0.03em] text-black dark:text-white"><%= title %></h3>
-            <p class="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400"><%= description %></p>
-          </article>
-        <% end %>
+      <div class="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <figure class="brand-panel">
+          <img src="https://lephucr.com/static/og-image.png" alt="LEPHUCR reader hub preview" class="aspect-[1200/630] w-full border-b border-black object-cover dark:border-white" loading="lazy">
+          <figcaption class="p-5 font-mono text-[10px] uppercase leading-5 tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
+            Reader preview image from the live LEPHUCR publication system.
+          </figcaption>
+        </figure>
+        <div class="grid border border-black dark:border-white md:grid-cols-2">
+          <% @deliverables.each_with_index do |(title, description), index| %>
+            <article class="border-b border-black p-6 dark:border-white md:border-r <%= index > 1 ? "md:border-b-0" : "" %> <%= index.odd? ? "md:border-r-0" : "" %>">
+              <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400"><%= format("%02d", index + 1) %></p>
+              <h3 class="mt-4 font-display text-2xl font-bold tracking-[-0.03em] text-black dark:text-white"><%= title %></h3>
+              <p class="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400"><%= description %></p>
+            </article>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="receive" class="border-t border-black bg-black py-16 text-white dark:border-white dark:bg-white dark:text-black sm:py-24">
+<section id="receive" class="border-t border-black bg-black py-20 text-white dark:border-white dark:bg-white dark:text-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
       <span class="brand-section-marker text-white dark:text-black"><span class="brand-section-marker__number border-white dark:border-black">04</span> Purchase</span>
@@ -183,6 +223,19 @@
           <%= mail_to @purchase_email, "Write to receive it", subject: "Read This To Make A Real Change - $50 USD", body: purchase_body, class: "brand-button brand-button--brand" %>
         </div>
       </div>
+
+      <nav aria-label="Writing page sections" class="mt-8 border border-white dark:border-black">
+        <ol class="grid divide-y divide-white font-mono text-[11px] font-semibold uppercase tracking-[0.1em] dark:divide-black sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+          <% section_links.each do |number, label, href| %>
+            <li>
+              <%= link_to href, class: "flex items-center gap-3 px-4 py-4 text-zinc-300 hover:bg-brand hover:text-black dark:text-zinc-700" do %>
+                <span><%= number %></span>
+                <span><%= label %></span>
+              <% end %>
+            </li>
+          <% end %>
+        </ol>
+      </nav>
     </div>
   </div>
 </section>

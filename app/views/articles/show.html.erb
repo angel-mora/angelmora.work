@@ -1,28 +1,39 @@
-<%= render ContainerComponent.new(class: "mt-16 lg:mt-32") do %>
-  <div class="xl:relative">
-    <div class="mx-auto max-w-2xl">
-      <article>
-        <header class="flex flex-col">
-          <div class="relative">
-            <img
-              src="<%= @article[:image] %>"
-              alt=""
-              class="aspect-[16/9] w-full rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 sm:aspect-[2/1] lg:aspect-[3/2]"
-            />
-            <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/10 dark:ring-zinc-100/10"></div>
-          </div>
-          <time datetime="<%= @article[:date] %>" class="mt-8 flex items-center text-base text-zinc-400 dark:text-zinc-500">
-            <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-            <span class="ml-3"><%= Date.parse(@article[:date]).strftime("%B %-d, %Y") %></span>
-          </time>
-          <h1 class="mt-2 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            <%= @article[:title] %>
-          </h1>
-        </header>
-        <%= render ProseComponent.new(class: "mt-8") do %>
-          <%= @article[:content].html_safe %>
+<% content_for :title, "#{@article[:title]} - Angel Mora" %>
+<%# BRAND artifact: Gallery Space for article header, Reading tier for body; amber only as hovered link underline. %>
+
+<article class="bg-white dark:bg-black">
+  <header class="border-b border-black py-16 dark:border-white sm:py-24">
+    <div class="brand-container brand-grid">
+      <div class="lg:col-span-3">
+        <span class="brand-section-marker"><span class="brand-section-marker__number">A</span> Article</span>
+      </div>
+      <div class="lg:col-span-8 lg:col-start-5">
+        <time datetime="<%= @article[:date] %>" class="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
+          <%= Date.parse(@article[:date]).strftime("%B %-d, %Y") %>
+        </time>
+        <h1 class="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.05em] text-black dark:text-white sm:text-7xl">
+          <%= @article[:title] %>
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400"><%= @article[:description] %></p>
+        <% if @article[:image].present? %>
+          <img
+            src="<%= @article[:image] %>"
+            alt=""
+            class="mt-10 aspect-[16/9] w-full border border-black object-cover dark:border-white"
+          >
         <% end %>
-      </article>
+      </div>
     </div>
-  </div>
-<% end %>
+  </header>
+
+  <section class="py-16 sm:py-24">
+    <div class="brand-container brand-grid">
+      <div class="lg:col-span-3">
+        <p class="brand-kicker">Body</p>
+      </div>
+      <div class="font-reading text-lg leading-8 text-zinc-700 dark:text-zinc-300 lg:col-span-7 lg:col-start-5 [&_a]:text-black [&_a]:underline [&_a]:decoration-brand [&_a]:decoration-2 [&_a]:underline-offset-4 dark:[&_a]:text-white [&_code]:border [&_code]:border-black [&_code]:px-1 [&_code]:font-mono [&_code]:text-sm dark:[&_code]:border-white [&_h2]:mt-12 [&_h2]:font-display [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:tracking-[-0.035em] [&_h2]:text-black dark:[&_h2]:text-white [&_li]:mt-2 [&_ol]:mt-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mt-6">
+        <%= @article[:content].html_safe %>
+      </div>
+    </div>
+  </section>
+</article>
