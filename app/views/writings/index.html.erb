@@ -1,82 +1,61 @@
-<% content_for :title, "Writing - Angel Mora" %>
-<%# BRAND artifact: Gallery Space register; Space Grotesk + Lora carry hierarchy; amber names CTA and cover rule; neutrals are white/black/zinc with hard rules. %>
+<% content_for :title, spanish? ? "Escritura - Angel Mora" : "Writing - Angel Mora" %>
+<%# BRAND artifact: Gallery Space register; Space Grotesk + Lora carry hierarchy; amber names CTA; the cover reproduces the inverted book artifact. %>
 
 <%
-  purchase_body = <<~TEXT
+  purchase_body = if spanish?
+  <<~TEXT
+    Hola Angel,
+
+    Quiero recibir Lee Esto Para Hacer Un Cambio Real por email por $50 USD.
+
+    Por favor enviame instrucciones de pago y detalles de entrega.
+  TEXT
+  else
+  <<~TEXT
     Hi Angel,
 
     I want to receive Read This To Make A Real Change by email for $50 USD.
 
     Please send payment instructions and delivery details.
   TEXT
+  end
 
   section_links = [
-    ["01", "Position", "#position"],
-    ["02", "Reader hub", "#reader-hub"],
-    ["03", "Formats", "#formats"],
-    ["04", "$50 mail", "#receive"]
+    ["01", spanish? ? "Posicion" : "Position", "#position"],
+    ["02", spanish? ? "Hub lector" : "Reader hub", "#reader-hub"],
+    ["03", spanish? ? "Formatos" : "Formats", "#formats"],
+    ["04", spanish? ? "Compra" : "Purchase", "#receive"]
   ]
 %>
 
+<div class="pb-24 sm:pb-20">
 <section class="border-b border-black bg-white dark:border-white dark:bg-black">
-  <div class="brand-container grid min-h-[calc(100svh-57px)] gap-8 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
+  <div class="brand-container grid min-h-[calc(100vh-57px)] gap-8 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
     <div class="order-2 lg:order-1 lg:col-span-6">
-      <div class="mx-auto w-full max-w-[760px] border-2 border-black bg-zinc-200 p-3 dark:border-white dark:bg-zinc-900">
-        <div class="grid min-h-[460px] border-2 border-black bg-white dark:border-white md:grid-cols-[0.82fr_1fr]">
-          <aside class="hidden border-r-2 border-black bg-white md:flex md:flex-col dark:border-white">
-            <div class="h-1 bg-brand"></div>
-            <div class="flex flex-1 flex-col p-5">
-              <p class="font-display text-[15px] font-semibold leading-snug tracking-[-0.02em] text-black">
-                What are the possibilities of acting from a specific circumstance, in the most uncertain and absurd moment of history?
-              </p>
-              <div class="my-4 h-px bg-black"></div>
-              <p class="text-[12px] leading-6 text-zinc-700">
-                A technocritical position against the confusion between theory and action: state, markets, machines, apparatuses, capture, desire, organization.
-              </p>
-              <div class="my-4 h-px bg-black"></div>
-              <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-black">This book</p>
-              <ul class="mt-3 space-y-2 font-mono text-[10px] leading-5 text-zinc-700">
-                <li>Introduces La Partida as a technocritical position</li>
-                <li>Reads real change through state, capitalism, and markets</li>
-                <li>Frames critical action beyond the theory-praxis split</li>
-                <li>Maps apparatuses of capture and extraction</li>
-              </ul>
-              <div class="mt-auto flex items-end justify-between border-t border-zinc-300 pt-4">
-                <div>
-                  <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-black">La Partida</p>
-                  <p class="font-mono text-[10px] uppercase tracking-[0.09em] text-zinc-500">Collection Apparatuses</p>
-                </div>
-                <div class="h-10 w-16 bg-[repeating-linear-gradient(90deg,#000_0_2px,transparent_2px_5px)]"></div>
-              </div>
-            </div>
+      <div class="mx-auto w-full max-w-[540px] bg-[#6B6B6B] p-3 sm:p-4">
+        <article class="grid aspect-[528/816] grid-cols-[42px_1fr] overflow-hidden bg-black text-white shadow-[6px_6px_0_0_#EF4444]">
+          <aside class="relative flex items-center justify-center border-r border-[#1C1C1C]">
+            <div class="absolute left-0 top-0 h-full w-[3px] bg-[#EF4444]"></div>
+            <span class="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.12em] text-[#404040]" style="writing-mode: vertical-rl; transform: rotate(180deg);">
+              LEE ESTO PARA HACER UN CAMBIO REAL
+            </span>
           </aside>
-
-          <article class="grid min-h-[460px] grid-cols-[44px_1fr] bg-white">
-            <aside class="relative flex items-center justify-center border-r border-zinc-300">
-              <div class="absolute left-0 top-0 h-full w-[3px] bg-brand"></div>
-              <span class="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500" style="writing-mode: vertical-rl; transform: rotate(180deg);">
-                LEPHUCR / Technocritique / Apparatuses / Vol. 01
-              </span>
-            </aside>
-            <div class="flex flex-col px-4 py-5 sm:px-6">
-              <div class="border-b-2 border-black pb-3">
-                <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">Angel de Jesus / Read This To Make A Real Change</p>
-              </div>
-              <div class="flex flex-1 flex-col justify-center py-5">
-                <span class="block font-display text-[clamp(2.4rem,7vw,4.8rem)] font-bold uppercase leading-[0.9] tracking-[-0.05em] text-black">Read this</span>
-                <span class="block font-display text-[clamp(2.4rem,7vw,4.8rem)] font-bold uppercase leading-[0.9] tracking-[-0.05em] text-black">to make</span>
-                <span class="block font-display text-[clamp(2.4rem,7vw,4.8rem)] font-bold uppercase leading-[0.9] tracking-[-0.05em] text-black">a real</span>
-                <div class="my-4 h-1 bg-brand"></div>
-                <span class="block font-display text-[clamp(5rem,15vw,10rem)] font-bold uppercase leading-[0.82] tracking-[-0.06em] text-brand">Change</span>
-                <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">and other texts</p>
-              </div>
-              <div class="flex items-end justify-between border-t-2 border-black pt-3">
-                <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-black">Angel de Jesus</p>
-                <p class="text-right font-mono text-[10px] uppercase leading-5 tracking-[0.09em] text-zinc-500">La Partida<br>Collection Apparatuses</p>
-              </div>
+          <div class="flex flex-col px-4 sm:px-6">
+            <div class="flex flex-1 flex-col justify-center py-4">
+              <span class="block font-display text-[clamp(2.9rem,10vw,4.55rem)] font-bold uppercase leading-[0.93] tracking-[-0.04em] text-white">LEE ESTO</span>
+              <span class="block font-display text-[clamp(2.9rem,10vw,4.55rem)] font-bold uppercase leading-[0.93] tracking-[-0.04em] text-white">PARA</span>
+              <span class="block font-display text-[clamp(2.9rem,10vw,4.55rem)] font-bold uppercase leading-[0.93] tracking-[-0.04em] text-white">HACER UN</span>
+              <span class="block font-display text-[clamp(2.9rem,10vw,4.55rem)] font-bold uppercase leading-[0.93] tracking-[-0.04em] text-white">CAMBIO</span>
+              <div class="my-3 h-0.5 bg-[#EF4444]"></div>
+              <span class="block font-display text-[clamp(6rem,24vw,10.75rem)] font-bold uppercase leading-[0.86] tracking-[-0.045em] text-[#EF4444]">REAL</span>
+              <p class="mt-3 font-mono text-[10px] uppercase tracking-[0.09em] text-[#484848]"><%= spanish? ? "y otros textos" : "and other texts" %></p>
             </div>
-          </article>
-        </div>
+            <div class="flex items-end justify-between border-t border-[#252525] py-4">
+              <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-white">Angel de Jesus</p>
+              <p class="text-right font-mono text-[10px] uppercase leading-5 tracking-[0.09em] text-[#484848]">La Partida</p>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
 
@@ -85,19 +64,16 @@
         <span class="brand-tag brand-tag--featured">Writing</span>
         <span class="brand-tag brand-tag--info">Reader hub</span>
       </div>
-      <p class="brand-kicker">LEPHUCR / Reader correspondence</p>
+      <p class="brand-kicker"><%= spanish? ? "LEPHUCR / Correspondencia lectora" : "LEPHUCR / Reader correspondence" %></p>
       <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[0.96] tracking-[-0.045em] text-black dark:text-white sm:text-5xl xl:text-6xl">
-        A book for people tired of mistaking discourse for action.
+        <%= spanish? ? "Un libro para personas cansadas de confundir discurso con accion." : "A book for people tired of mistaking discourse for action." %>
       </h1>
       <p class="mt-5 max-w-2xl font-reading text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-        LEPHUCR is the acronym for <span class="font-semibold text-black dark:text-white">LEE ESTO PARA HACER UN CAMBIO REAL</span>. In English: <span class="font-semibold text-black dark:text-white">READ THIS TO MAKE A REAL CHANGE</span>.
-      </p>
-      <p class="mt-4 max-w-2xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-        A living manuscript about public life, mercantile domination, critical organization, and the painful distance between wanting change and building it. Read first, then write if the object is for you.
+        <%= spanish? ? "Un manuscrito vivo sobre vida publica, dominacion mercantil, organizacion critica y la distancia dolorosa entre querer cambio y construirlo. Lee primero; escribe despues si el objeto es para ti." : "A living manuscript about public life, mercantile domination, critical organization, and the painful distance between wanting change and building it. Read first, then write if the object is for you." %>
       </p>
       <div class="mt-7 flex flex-wrap items-center gap-4">
-        <%= mail_to @purchase_email, "Receive by email - $50 USD", subject: "Read This To Make A Real Change - $50 USD", body: purchase_body, class: "brand-button brand-button--brand" %>
-        <%= link_to "Explore the reader hub", "#reader-hub", class: "brand-button brand-button--outline" %>
+        <%= mail_to @purchase_email, spanish? ? "Recibir por email - $50 USD" : "Receive by email - $50 USD", subject: spanish? ? "Lee Esto Para Hacer Un Cambio Real - $50 USD" : "Read This To Make A Real Change - $50 USD", body: purchase_body, class: "brand-button brand-button--brand" %>
+        <%= link_to spanish? ? "Explorar el hub lector" : "Explore the reader hub", "#reader-hub", class: "brand-button brand-button--outline" %>
       </div>
     </div>
   </div>
@@ -106,11 +82,11 @@
 <section id="position" class="bg-white py-20 dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> Position</span>
+      <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> <%= spanish? ? "Posicion" : "Position" %></span>
     </div>
     <div class="lg:col-span-8 lg:col-start-5">
       <p class="font-display text-4xl font-bold leading-tight tracking-[-0.04em] text-black dark:text-white sm:text-6xl">
-        Not self-help. Not academic distance. A field note for action after theory has done its damage.
+        <%= spanish? ? "No es autoayuda. No es distancia academica. Una nota de campo para actuar despues de que la teoria ya hizo su dano." : "Not self-help. Not academic distance. A field note for action after theory has done its damage." %>
       </p>
       <div class="mt-10 grid gap-4 md:grid-cols-3">
         <% @reader_modes.each do |title, description| %>
@@ -122,9 +98,9 @@
       </div>
       <div class="mt-10 border-l-4 border-brand bg-zinc-100 p-6 dark:bg-zinc-950">
         <p class="font-reading text-xl leading-8 text-zinc-800 dark:text-zinc-200">
-          "It is necessary to analyze mercantile domination as process, flow, and history."
+          <%= spanish? ? "Es necesario analizar la dominacion mercantil como proceso, flujo e historia." : "It is necessary to analyze mercantile domination as process, flow, and history." %>
         </p>
-        <p class="mt-3 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">From the original LEPHUCR introduction</p>
+        <p class="mt-3 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400"><%= spanish? ? "De la introduccion original de LEPHUCR" : "From the original LEPHUCR introduction" %></p>
       </div>
     </div>
   </div>
@@ -133,9 +109,9 @@
 <section id="reader-hub" class="border-y border-black bg-zinc-50 py-20 dark:border-white dark:bg-zinc-950 sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <span class="brand-section-marker"><span class="brand-section-marker__number">02</span> Reader hub</span>
+      <span class="brand-section-marker"><span class="brand-section-marker__number">02</span> <%= spanish? ? "Hub lector" : "Reader hub" %></span>
       <p class="mt-5 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-        Adapted from the reference table of contents and the live Quartz reader at lephucr.com.
+        <%= spanish? ? "Adaptado del indice de referencia y del lector Quartz activo en lephucr.com." : "Adapted from the reference table of contents and the live Quartz reader at lephucr.com." %>
       </p>
     </div>
     <div class="space-y-6 lg:col-span-8 lg:col-start-5">
@@ -147,7 +123,7 @@
               <h2 class="font-display text-2xl font-bold tracking-[-0.03em] text-black dark:text-white"><%= track[:title] %></h2>
               <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400"><%= track[:note] %></p>
             </div>
-            <span class="brand-tag <%= track[:status] == "Open hub" ? "brand-tag--success" : "brand-tag--info" %>"><%= track[:status] %></span>
+            <span class="brand-tag <%= track[:chapters].any? { |chapter| chapter[:href].present? } ? "brand-tag--success" : "brand-tag--info" %>"><%= track[:status] %></span>
           </header>
           <ol class="divide-y divide-zinc-300 dark:divide-zinc-700">
             <% track[:chapters].each do |chapter| %>
@@ -159,7 +135,7 @@
                     <span class="text-sm font-semibold text-black dark:text-white"><%= chapter[:title] %></span>
                   <% end %>
                 </div>
-                <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">p. <%= chapter[:page] %></span>
+                <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400"><%= spanish? ? "p." : "p." %> <%= chapter[:page] %></span>
               </li>
             <% end %>
           </ol>
@@ -172,17 +148,21 @@
 <section id="formats" class="bg-white py-20 dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <span class="brand-section-marker"><span class="brand-section-marker__number">03</span> Formats</span>
+      <span class="brand-section-marker"><span class="brand-section-marker__number">03</span> <%= spanish? ? "Formatos" : "Formats" %></span>
     </div>
     <div class="lg:col-span-8 lg:col-start-5">
       <h2 class="font-display text-4xl font-bold tracking-[-0.04em] text-black dark:text-white sm:text-5xl">
-        A book, but also a small distribution system.
+        <%= spanish? ? "Un libro, pero tambien un pequeno sistema de distribucion." : "A book, but also a small distribution system." %>
       </h2>
       <div class="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <figure class="brand-panel">
-          <img src="https://lephucr.com/static/og-image.png" alt="LEPHUCR reader hub preview" class="aspect-[1200/630] w-full border-b border-black object-cover dark:border-white" loading="lazy">
+          <div class="grid gap-px border-b border-black bg-black dark:border-white md:grid-cols-2">
+            <% ["book-image-0.png", "book-image-1.png", "book-image-2.png", "book-image-3.png"].each do |image| %>
+              <img src="/lephucr/<%= image %>" alt="<%= spanish? ? "Vista del libro LEPHUCR" : "LEPHUCR book view" %>" class="aspect-[4/3] w-full bg-white object-cover" loading="lazy">
+            <% end %>
+          </div>
           <figcaption class="p-5 font-mono text-[10px] uppercase leading-5 tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
-            Reader preview image from the live LEPHUCR publication system.
+            <%= spanish? ? "Imagenes del libro y del PDF de trabajo, no una maqueta generica." : "Images from the book and working PDF, not a generic mockup." %>
           </figcaption>
         </figure>
         <div class="grid border border-black dark:border-white md:grid-cols-2">
@@ -202,40 +182,41 @@
 <section id="receive" class="border-t border-black bg-black py-20 text-white dark:border-white dark:bg-white dark:text-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <span class="brand-section-marker text-white dark:text-black"><span class="brand-section-marker__number border-white dark:border-black">04</span> Purchase</span>
+      <span class="brand-section-marker text-white dark:text-black"><span class="brand-section-marker__number border-white dark:border-black">04</span> <%= spanish? ? "Compra" : "Purchase" %></span>
     </div>
     <div class="lg:col-span-8 lg:col-start-5">
       <div class="grid gap-8 border border-white p-6 dark:border-black lg:grid-cols-[1fr_auto] lg:p-8">
         <div>
-          <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400 dark:text-zinc-600">Correspondence edition</p>
+          <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400 dark:text-zinc-600"><%= spanish? ? "Edicion por correspondencia" : "Correspondence edition" %></p>
           <h2 class="mt-4 max-w-2xl font-display text-4xl font-bold leading-tight tracking-[-0.045em] sm:text-6xl">
-            Receive the manuscript by email for $50 USD.
+            <%= spanish? ? "Recibe el manuscrito por email por $50 USD." : "Receive the manuscript by email for $50 USD." %>
           </h2>
           <p class="mt-5 max-w-xl text-sm leading-7 text-zinc-300 dark:text-zinc-700">
-            No aggressive funnel. Send the email, get payment instructions, receive the book and delivery notes directly. If you need to inspect the work first, the reader hub is open above.
+            <%= spanish? ? "Sin funnel agresivo. Envia el email, recibe instrucciones de pago y despues el libro con notas de entrega. Si necesitas inspeccionar el trabajo primero, el hub lector esta abierto arriba." : "No aggressive funnel. Send the email, get payment instructions, receive the book and delivery notes directly. If you need to inspect the work first, the reader hub is open above." %>
           </p>
         </div>
         <div class="flex flex-col justify-between gap-6 border-t border-white pt-6 dark:border-black lg:min-w-60 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
           <div>
             <p class="font-display text-7xl font-bold tracking-[-0.06em]">$50</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-400 dark:text-zinc-600">USD / email delivery</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-400 dark:text-zinc-600"><%= spanish? ? "USD / entrega por email" : "USD / email delivery" %></p>
           </div>
-          <%= mail_to @purchase_email, "Write to receive it", subject: "Read This To Make A Real Change - $50 USD", body: purchase_body, class: "brand-button brand-button--brand" %>
+          <%= mail_to @purchase_email, spanish? ? "Escribir para recibirlo" : "Write to receive it", subject: spanish? ? "Lee Esto Para Hacer Un Cambio Real - $50 USD" : "Read This To Make A Real Change - $50 USD", body: purchase_body, class: "brand-button brand-button--brand" %>
         </div>
       </div>
-
-      <nav aria-label="Writing page sections" class="mt-8 border border-white dark:border-black">
-        <ol class="grid divide-y divide-white font-mono text-[11px] font-semibold uppercase tracking-[0.1em] dark:divide-black sm:grid-cols-4 sm:divide-x sm:divide-y-0">
-          <% section_links.each do |number, label, href| %>
-            <li>
-              <%= link_to href, class: "flex items-center gap-3 px-4 py-4 text-zinc-300 hover:bg-brand hover:text-black dark:text-zinc-700" do %>
-                <span><%= number %></span>
-                <span><%= label %></span>
-              <% end %>
-            </li>
-          <% end %>
-        </ol>
-      </nav>
     </div>
   </div>
 </section>
+</div>
+
+<nav aria-label="Writing page sections" class="fixed bottom-0 left-0 z-40 w-full border-t border-black bg-white dark:border-white dark:bg-black">
+  <ol class="brand-container grid divide-y divide-black font-mono text-[10px] font-semibold uppercase tracking-[0.1em] dark:divide-white sm:grid-cols-4 sm:divide-x sm:divide-y-0 sm:text-[11px]">
+    <% section_links.each do |number, label, href| %>
+      <li>
+        <%= link_to href, class: "flex items-center gap-3 px-3 py-3 text-black hover:bg-brand hover:text-black dark:text-white sm:px-4" do %>
+          <span><%= number %></span>
+          <span><%= label %></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</nav>

@@ -1,71 +1,68 @@
-<%= render ContainerComponent.new(class: "mt-16 sm:mt-32") do |c| %>
-  <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-    <div class="lg:pl-20">
-      <div class="max-w-xs px-2.5 lg:max-w-none">
-        <div class="aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800 overflow-hidden flex items-center justify-center">
-          <span class="text-6xl font-bold text-zinc-400 dark:text-zinc-600">AM</span>
-        </div>
-      </div>
-    </div>
-    <div class="lg:order-first lg:row-span-2">
-      <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-        I'm Angel Mora, Philosopher and Programmer
-      </h1>
-      <h3 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl mt-6">
-        +5 years of experience
-      </h3>
+<% content_for :title, spanish? ? "Sobre mi - Angel Mora" : "About - Angel Mora" %>
+<%# BRAND artifact: Gallery Space register; display title, mono metadata, hard rules, no rounded elements. %>
 
-      <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-        <p>
-          I've always been passionate about programming. Got my first computer when I was 10 and been breaking stuff ever since.
-          During college, spent hours in Linux, reading a lot about distros and the Open Source Software Movement.
-          A few years later (2017) started with Ruby and Jekyll, writing a blog called disonancias.org.
-          From there, fell in love with Javascript and found my way through GitHub's amazing features.
-          Worked in a Call Center for AT&T and learned a lot about debugging the browser, performing complex SQL queries.
-        </p>
-        <p>
-          My first technical challenges were related to automate writing with Pandoc and Bash.
-          Unix Filesystem and some Bash scripting soon helped me understand that programming languages are just ways to interact with the powerful system a computer is.
-          In 2019 landed my first formal job as a Data Analyst using R, Python and some OSINT tools for Crime Analysis.
-          In that job discovered the power of having an application that secures your research.
-        </p>
-        <p>
-          In 2023 finished a Cybersecurity Bootcamp from EdX that helped me get my CompTIA Security+ Certification.
-          I currently work at an International Company.
-          Spend my days improving my Obsidian skills and developing a side project for Knowledge Base Networking. I like old-school text editors, like Vim and Emacs.
-        </p>
-        <p>
-          I'm an enthusiast of GIS projects and of The Rails Way. If you find my profile interesting, don't hesitate to reach out!
-        </p>
-      </div>
+<%
+  paragraphs = if spanish?
+    [
+      "Siempre me ha apasionado programar. Tuve mi primera computadora a los 10 anos y desde entonces he aprendido rompiendo cosas, arreglandolas y entendiendo como funcionan los sistemas. Durante la universidad pase muchas horas en Linux, leyendo sobre distros y el movimiento Open Source. En 2017 empece con Ruby y Jekyll escribiendo un blog llamado disonancias.org; desde ahi me acerque a JavaScript, GitHub y a la idea de publicar conocimiento como software.",
+      "Trabaje en un Call Center para AT&T, donde aprendi mucho sobre debugging en el navegador y consultas SQL complejas. Mis primeros retos tecnicos serios tambien venian de automatizar escritura con Pandoc y Bash. El filesystem Unix y algo de scripting me ensenaron que los lenguajes de programacion son formas de conversar con una maquina muy poderosa.",
+      "En 2019 llegue a mi primer trabajo formal como Data Analyst usando R, Python y herramientas OSINT para analisis criminal. Ese trabajo me mostro el valor de tener aplicaciones que aseguran, organizan y vuelven accesible investigacion compleja.",
+      "En 2023 termine un Cybersecurity Bootcamp de EdX que me ayudo a obtener la certificacion CompTIA Security+. Despues segui trabajando en equipos internacionales, mejorando monolitos Rails, sistemas internos, automatizaciones y productos donde el conocimiento se convierte en infraestructura.",
+      "Paso mucho tiempo mejorando mis skills en Obsidian y desarrollando proyectos para Knowledge Base Networking. Me gustan los editores de texto old-school como Vim y Emacs, los proyectos GIS y The Rails Way. Si mi perfil te parece interesante, escribeme."
+    ]
+  else
+    [
+      "I've always been passionate about programming. I got my first computer when I was 10 and have been breaking, fixing, and learning systems ever since. During college I spent hours in Linux, reading about distros and the Open Source Software Movement. A few years later, in 2017, I started with Ruby and Jekyll, writing a blog called disonancias.org; from there I fell in love with JavaScript, GitHub, and the idea of publishing knowledge as software.",
+      "I worked in a Call Center for AT&T and learned a lot about debugging the browser and performing complex SQL queries. My first serious technical challenges were also related to automating writing with Pandoc and Bash. The Unix filesystem and some Bash scripting helped me understand that programming languages are ways to interact with the powerful system a computer is.",
+      "In 2019 I landed my first formal job as a Data Analyst using R, Python, and OSINT tools for crime analysis. That job showed me the value of applications that secure, organize, and make complex research accessible.",
+      "In 2023 I finished a Cybersecurity Bootcamp from EdX that helped me earn my CompTIA Security+ certification. After that I continued working with international product teams, improving Rails monoliths, internal systems, automation, and products where knowledge becomes infrastructure.",
+      "I spend a lot of time improving my Obsidian skills and developing projects for Knowledge Base Networking. I like old-school text editors like Vim and Emacs, GIS projects, and The Rails Way. If you find my profile interesting, don't hesitate to reach out."
+    ]
+  end
+
+  social_links = [
+    ["Twitter", "https://twitter.com/angelmoradev"],
+    ["GitHub", "https://github.com/angel-mora"],
+    ["LinkedIn", "https://linkedin.com/in/angelmoradev"],
+    ["Email", "mailto:angelmomaa@gmail.com"]
+  ]
+%>
+
+<section class="border-b border-black bg-white py-16 dark:border-white dark:bg-black sm:py-24">
+  <div class="brand-container brand-grid">
+    <div class="lg:col-span-3">
+      <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> <%= spanish? ? "Sobre mi" : "About" %></span>
     </div>
-    <div class="lg:pl-20">
-      <ul role="list">
-        <li class="flex">
-          <a href="https://twitter.com/angelmoradev" class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">
-            <svg class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.055 7.983c.012.175.012.349.012.523 0 5.335-3.967 11.483-11.213 11.483A11.144 11.144 0 0 1 0 18.197a7.855 7.855 0 0 0 1.413.199 7.892 7.892 0 0 0 4.91-1.708 3.96 3.96 0 0 1-3.697-2.753 3.955 3.955 0 0 0 1.785-.068 3.954 3.954 0 0 1-3.168-3.88v-.05a3.92 3.92 0 0 0 1.788.498A3.958 3.958 0 0 1 .787 5.64a11.225 11.225 0 0 0 8.15 4.143 3.96 3.96 0 0 1 1.201-5.278A3.953 3.953 0 0 1 15.9 6.692a7.806 7.806 0 0 0 2.51-.965 3.962 3.962 0 0 1-1.74 2.188A7.9 7.9 0 0 0 19.4 7.07a8.38 8.38 0 0 1-1.948 2.056z"/></svg>
-            <span class="ml-4">Follow on Twitter</span>
-          </a>
-        </li>
-        <li class="flex mt-4">
-          <a href="https://github.com/angel-mora" class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">
-            <svg class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.475 2 2 6.475 2 12c0 4.98 3.225 9.21 7.688 10.695.56.1.768-.245.768-.545v-1.856c-3.13.675-3.793-1.5-3.793-1.5-.51-1.293-1.245-1.635-1.245-1.635-1.015-.695.075-.695.075-.695 1.125.075 1.72 1.155 1.72 1.155 1.005 1.715 2.64 1.22 3.285.93.1-.735.39-1.22.705-1.505-2.46-.285-5.04-1.23-5.04-5.46 0-1.2.42-2.19 1.11-2.955-.12-.285-.48-1.41.105-2.94 0 0 .915-.3 3 1.125A10.44 10.44 0 0 1 12 6.84c.93.005 1.865.12 2.745.36 2.085-1.425 3-1.125 3-1.125.585 1.53.225 2.655.105 2.94.69.765 1.105 1.755 1.105 2.955 0 4.245-2.585 5.175-5.04 5.46.39.345.735 1.005.735 2.04v3.015c0 .3.2.65.775.545C18.78 21.21 22 16.98 22 12c0-5.525-4.475-10-10-10z"/></svg>
-            <span class="ml-4">Follow on GitHub</span>
-          </a>
-        </li>
-        <li class="flex mt-4">
-          <a href="https://linkedin.com/in/angelmoradev" class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">
-            <svg class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.25 8.25H1.5v13.5h3.75V8.25zM3.375 6A2.625 2.625 0 1 0 3.375.75a2.625 2.625 0 0 0 0 5.25zM22.5 21.75h-3.75v-6.6c0-1.575-.03-3.6-2.19-3.6-2.19 0-2.527 1.71-2.527 3.487v6.713H10.5V8.25h3.562v1.845h.052c.495-.935 1.703-1.92 3.495-1.92 3.735 0 4.425 2.46 4.425 5.663v7.912z"/></svg>
-            <span class="ml-4">Follow on LinkedIn</span>
-          </a>
-        </li>
-        <li class="flex mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
-          <a href="mailto:angelmomaa@gmail.com" class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">
-            <svg class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"/></svg>
-            <span class="ml-4">angelmomaa@gmail.com</span>
-          </a>
-        </li>
-      </ul>
+    <div class="lg:col-span-8 lg:col-start-5">
+      <p class="brand-kicker"><%= spanish? ? "Filosofo / programador / Mexico" : "Philosopher / programmer / Mexico" %></p>
+      <h1 class="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.05em] text-black dark:text-white sm:text-7xl">
+        <%= spanish? ? "Soy Angel Mora, filosofo y programador." : "I'm Angel Mora, philosopher and programmer." %>
+      </h1>
+      <p class="mt-6 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
+        <%= spanish? ? "6+ anos de experiencia" : "6+ years of experience" %>
+      </p>
     </div>
   </div>
-<% end %>
+</section>
+
+<section class="bg-white py-16 dark:bg-black sm:py-24">
+  <div class="brand-container brand-grid">
+    <aside class="lg:col-span-3">
+      <div class="border-2 border-black p-6 dark:border-white">
+        <div class="flex aspect-square items-center justify-center border border-black dark:border-white">
+          <span class="font-display text-7xl font-bold tracking-[-0.05em] text-black dark:text-white">AM</span>
+        </div>
+        <div class="mt-6 space-y-3 font-mono text-[11px] uppercase tracking-[0.1em]">
+          <% social_links.each do |label, href| %>
+            <%= link_to label, href, class: "block text-zinc-600 hover:text-black hover:underline decoration-brand decoration-2 underline-offset-4 dark:text-zinc-400 dark:hover:text-white", target: (href.start_with?("http") ? "_blank" : nil), rel: (href.start_with?("http") ? "noopener" : nil) %>
+          <% end %>
+        </div>
+      </div>
+    </aside>
+    <div class="font-reading text-lg leading-8 text-zinc-700 dark:text-zinc-300 lg:col-span-7 lg:col-start-5">
+      <% paragraphs.each do |paragraph| %>
+        <p class="mt-6 first:mt-0"><%= paragraph %></p>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,3 +1,13 @@
+<%
+  nav_items = [
+    [spanish? ? "Sobre mi" : "About", about_path, current_page?(about_path)],
+    [spanish? ? "Articulos" : "Articles", articles_path, current_page?(articles_path)],
+    ["Writing", writing_path, current_page?(writing_path)],
+    [spanish? ? "Proyectos" : "Projects", projects_path, current_page?(projects_path)],
+    ["Vault", vault_path, current_page?(vault_path)]
+  ]
+%>
+
 <header class="relative z-50 flex flex-none flex-col border-b border-black bg-white dark:border-white dark:bg-black" id="site-header">
   <div class="brand-container flex items-center justify-between gap-5 py-3">
     <%= link_to root_path, class: "font-mono text-xs font-semibold uppercase tracking-[0.14em] text-black dark:text-white" do %>
@@ -6,16 +16,16 @@
 
     <nav class="hidden md:flex">
       <ul class="flex items-center text-xs font-semibold uppercase tracking-[0.08em] text-zinc-600 dark:text-zinc-300">
-        <%= render NavLinkComponent.new(name: "About", href: about_path, current: current_page?(about_path)) %>
-        <%= render NavLinkComponent.new(name: "Articles", href: articles_path, current: current_page?(articles_path)) %>
-        <%= render NavLinkComponent.new(name: "Writing", href: writing_path, current: current_page?(writing_path)) %>
-        <%= render NavLinkComponent.new(name: "Projects", href: projects_path, current: current_page?(projects_path)) %>
-        <%= render NavLinkComponent.new(name: "Vault", href: vault_path, current: current_page?(vault_path)) %>
+        <% nav_items.each do |name, href, current| %>
+          <%= render NavLinkComponent.new(name:, href:, current:) %>
+        <% end %>
       </ul>
     </nav>
 
     <div class="flex items-center gap-2">
-      <button type="button" class="hidden border-2 border-black bg-brand px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-brand-hover md:inline-flex" data-action="booking-modal#open" data-booking-modal-type-param="recruiter">Book a call</button>
+      <%= link_to spanish? ? "EN" : "ES", localized_path(spanish? ? "en" : "es"), class: "hidden border-2 border-black bg-white px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-zinc-100 dark:border-white dark:bg-black dark:text-white dark:hover:bg-zinc-900 sm:inline-flex" %>
+
+      <button type="button" class="hidden border-2 border-black bg-brand px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-brand-hover md:inline-flex" data-action="booking-modal#open" data-booking-modal-type-param="recruiter"><%= spanish? ? "Agendar" : "Book a call" %></button>
 
       <div data-controller="theme">
         <button type="button" data-action="theme#toggle"
@@ -24,15 +34,15 @@
           role="switch"
           aria-label="Toggle color mode"
           aria-checked="false">
-          <span class="theme-switch__label">Day</span>
+          <span class="theme-switch__label"><%= spanish? ? "Dia" : "Day" %></span>
           <span class="theme-switch__track"><span class="theme-switch__knob"></span></span>
-          <span class="theme-switch__label">Night</span>
+          <span class="theme-switch__label"><%= spanish? ? "Noche" : "Night" %></span>
         </button>
       </div>
 
       <button type="button" data-action="mobile-menu#open"
         class="border-2 border-black bg-white px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition hover:bg-zinc-100 dark:border-white dark:bg-black dark:text-white dark:hover:bg-zinc-900 md:hidden">
-        Menu
+        <%= spanish? ? "Menu" : "Menu" %>
       </button>
     </div>
   </div>
@@ -43,18 +53,17 @@
   <div id="mobile-menu-panel" class="fixed inset-x-4 top-4 z-50 origin-top border-2 border-black bg-white p-6 dark:border-white dark:bg-black">
     <div class="flex flex-row-reverse items-center justify-between">
       <button type="button" data-action="mobile-menu#close" aria-label="Close menu" class="border border-black px-2 py-1 font-mono text-xs uppercase tracking-[0.1em] text-black dark:border-white dark:text-white">
-        Close
+        <%= spanish? ? "Cerrar" : "Close" %>
       </button>
-      <h2 class="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-zinc-600 dark:text-zinc-400">Navigation</h2>
+      <h2 class="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-zinc-600 dark:text-zinc-400"><%= spanish? ? "Navegacion" : "Navigation" %></h2>
     </div>
     <nav class="mt-6">
       <ul class="-my-2 divide-y divide-zinc-300 font-mono text-sm uppercase tracking-[0.08em] text-black dark:divide-zinc-700 dark:text-white">
-        <li><%= link_to "About", about_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
-        <li><%= link_to "Articles", articles_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
-        <li><%= link_to "Writing", writing_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
-        <li><%= link_to "Projects", projects_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
-        <li><%= link_to "Vault", vault_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
-        <li><button type="button" class="mt-4 block w-full border-2 border-black bg-brand px-3 py-3 text-center text-black" data-action="booking-modal#open mobile-menu#close" data-booking-modal-type-param="recruiter">Book a call</button></li>
+        <% nav_items.each do |name, href, _current| %>
+          <li><%= link_to name, href, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
+        <% end %>
+        <li><%= link_to spanish? ? "English" : "Espanol", localized_path(spanish? ? "en" : "es"), class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
+        <li><button type="button" class="mt-4 block w-full border-2 border-black bg-brand px-3 py-3 text-center text-black" data-action="booking-modal#open mobile-menu#close" data-booking-modal-type-param="recruiter"><%= spanish? ? "Agendar llamada" : "Book a call" %></button></li>
       </ul>
     </nav>
   </div>

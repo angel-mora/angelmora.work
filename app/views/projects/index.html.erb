@@ -1,18 +1,18 @@
-<% content_for :title, "Projects - Angel Mora" %>
+<% content_for :title, spanish? ? "Proyectos - Angel Mora" : "Projects - Angel Mora" %>
 <%# BRAND artifact: Technical Grid register; mono metadata, display project titles; amber only on hovered links. %>
 
 <section class="border-b border-black bg-white py-16 dark:border-white dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> Projects</span>
+      <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> <%= spanish? ? "Proyectos" : "Projects" %></span>
     </div>
     <div class="lg:col-span-8 lg:col-start-5">
-      <p class="brand-kicker">Philosophy / technocritique / code</p>
+      <p class="brand-kicker"><%= spanish? ? "Filosofia / tecnocritica / codigo" : "Philosophy / technocritique / code" %></p>
       <h1 class="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.05em] text-black dark:text-white sm:text-7xl">
-        Things in the intersection of philosophy, technocritique and code.
+        <%= spanish? ? "Cosas en la interseccion entre filosofia, tecnocritica y codigo." : "Things in the intersection of philosophy, technocritique and code." %>
       </h1>
       <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-        Small systems, experiments, and research interfaces that turn text into infrastructure.
+        <%= spanish? ? "Sistemas pequenos, experimentos e interfaces de investigacion que convierten texto en infraestructura." : "Small systems, experiments, and research interfaces that turn text into infrastructure." %>
       </p>
     </div>
   </div>
@@ -21,7 +21,7 @@
 <section class="bg-white py-16 dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <p class="brand-kicker">Selected work</p>
+      <p class="brand-kicker"><%= spanish? ? "Trabajo seleccionado" : "Selected work" %></p>
     </div>
     <div class="lg:col-span-9">
       <ul role="list" class="grid border-l border-t border-black dark:border-white sm:grid-cols-2 lg:grid-cols-3">

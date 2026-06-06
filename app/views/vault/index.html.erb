@@ -1,4 +1,4 @@
-<% content_for :title, "Vault - Angel Mora" %>
+<% content_for :title, spanish? ? "Vault - Angel Mora" : "Vault - Angel Mora" %>
 <%# BRAND artifact: Technical Grid register; iframe is treated as infrastructure, not a browser decoration. %>
 
 <section class="border-b border-black bg-white py-16 dark:border-white dark:bg-black sm:py-24">
@@ -7,12 +7,12 @@
       <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> Vault</span>
     </div>
     <div class="lg:col-span-8 lg:col-start-5">
-      <p class="brand-kicker">Quartz / Rails / knowledge base</p>
+      <p class="brand-kicker"><%= spanish? ? "Quartz / Rails / base de conocimiento" : "Quartz / Rails / knowledge base" %></p>
       <h1 class="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.05em] text-black dark:text-white sm:text-7xl">
-        My Second Brain.
+        <%= spanish? ? "Mi Segundo Cerebro." : "My Second Brain." %>
       </h1>
       <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-        A personal knowledge vault powered by Quartz and wrapped in Rails. Notes, ideas, and connections across domains.
+        <%= spanish? ? "Un vault personal de conocimiento impulsado por Quartz y envuelto en Rails. Notas, ideas y conexiones entre dominios." : "A personal knowledge vault powered by Quartz and wrapped in Rails. Notes, ideas, and connections across domains." %>
       </p>
     </div>
   </div>
@@ -21,7 +21,7 @@
 <section class="bg-white py-16 dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <p class="brand-kicker">Embedded system</p>
+      <p class="brand-kicker"><%= spanish? ? "Sistema embebido" : "Embedded system" %></p>
     </div>
     <div class="lg:col-span-9">
       <div class="brand-panel">
@@ -29,16 +29,16 @@
           <div>
             <h2 class="font-display text-2xl font-bold tracking-[-0.035em] text-black dark:text-white">Quartz Vault</h2>
             <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-              Rails acts as the paywall and dispatcher while Quartz serves the knowledge graph.
+              <%= spanish? ? "Rails funciona como paywall y dispatcher mientras Quartz sirve el grafo de conocimiento." : "Rails acts as the paywall and dispatcher while Quartz serves the knowledge graph." %>
             </p>
           </div>
-          <span class="brand-tag brand-tag--info">Iframe / live</span>
+          <span class="brand-tag brand-tag--info"><%= spanish? ? "Iframe / vivo" : "Iframe / live" %></span>
         </header>
 
-        <div data-controller="quartz-embed" data-quartz-embed-url-value="<%= ENV.fetch("QUARTZ_URL", "http://localhost:8080") %>" class="w-full">
+        <div data-controller="quartz-embed" data-quartz-embed-url-value="<%= ENV.fetch("QUARTZ_URL", "http://localhost:8080") %>" class="w-full" data-quartz-connected-label="<%= spanish? ? "Conectado" : "Connected" %>" data-quartz-error-label="<%= spanish? ? "Quartz no disponible - revisa QUARTZ_URL" : "Quartz unavailable - check QUARTZ_URL" %>">
           <div class="flex items-center justify-between gap-4 border-b border-black bg-white px-4 py-3 dark:border-white dark:bg-black">
-            <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">Connection</span>
-            <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400" data-quartz-embed-target="status">Connecting to Quartz...</span>
+            <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400"><%= spanish? ? "Conexion" : "Connection" %></span>
+            <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400" data-quartz-embed-target="status"><%= spanish? ? "Conectando a Quartz..." : "Connecting to Quartz..." %></span>
           </div>
           <iframe
             data-quartz-embed-target="iframe"

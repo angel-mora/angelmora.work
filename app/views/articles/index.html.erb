@@ -1,18 +1,18 @@
-<% content_for :title, "Articles - Angel Mora" %>
+<% content_for :title, spanish? ? "Articulos - Angel Mora" : "Articles - Angel Mora" %>
 <%# BRAND artifact: Technical Grid register; Space Grotesk for titles, JetBrains Mono for metadata; amber only as link underline. %>
 
 <section class="border-b border-black bg-white py-16 dark:border-white dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> Articles</span>
+      <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> <%= spanish? ? "Articulos" : "Articles" %></span>
     </div>
     <div class="lg:col-span-8 lg:col-start-5">
-      <p class="brand-kicker">Software / knowledge systems / technocritique</p>
+      <p class="brand-kicker"><%= spanish? ? "Software / sistemas de conocimiento / tecnocritica" : "Software / knowledge systems / technocritique" %></p>
       <h1 class="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.05em] text-black dark:text-white sm:text-7xl">
-        Writing on software and knowledge base systems.
+        <%= spanish? ? "Escritura sobre software y sistemas de bases de conocimiento." : "Writing on software and knowledge base systems." %>
       </h1>
       <p class="mt-6 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-        A small archive of articles about the systems that make research, memory, and technical work more useful.
+        <%= spanish? ? "Un pequeno archivo de articulos sobre sistemas que hacen mas utiles la investigacion, la memoria y el trabajo tecnico." : "A small archive of articles about the systems that make research, memory, and technical work more useful." %>
       </p>
     </div>
   </div>
@@ -21,7 +21,7 @@
 <section class="bg-white py-16 dark:bg-black sm:py-24">
   <div class="brand-container brand-grid">
     <div class="lg:col-span-3">
-      <p class="brand-kicker">Published notes</p>
+      <p class="brand-kicker"><%= spanish? ? "Notas publicadas" : "Published notes" %></p>
     </div>
     <div class="lg:col-span-8 lg:col-start-5">
       <div class="border-t border-black dark:border-white">
@@ -29,7 +29,7 @@
           <article class="grid gap-6 border-b border-black py-8 dark:border-white md:grid-cols-[180px_1fr]">
             <div>
               <time datetime="<%= article[:date] %>" class="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
-                <%= Date.parse(article[:date]).strftime("%B %-d, %Y") %>
+                <%= site_date(article[:date]) %>
               </time>
             </div>
             <div class="grid gap-5 md:grid-cols-[220px_1fr]">
@@ -41,10 +41,10 @@
               >
               <div>
                 <h2 class="font-display text-2xl font-bold tracking-[-0.035em] text-black dark:text-white">
-                  <%= link_to article[:title], article_path(article[:slug]), class: "hover:underline decoration-brand decoration-2 underline-offset-4" %>
+                  <%= link_to article[:title], article_path(slug: article[:slug]), class: "hover:underline decoration-brand decoration-2 underline-offset-4" %>
                 </h2>
                 <p class="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400"><%= article[:description] %></p>
-                <%= link_to "Read article", article_path(article[:slug]), class: "mt-5 inline-flex font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-black underline decoration-brand decoration-2 underline-offset-4 dark:text-white" %>
+                <%= link_to spanish? ? "Leer articulo" : "Read article", article_path(slug: article[:slug]), class: "mt-5 inline-flex font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-black underline decoration-brand decoration-2 underline-offset-4 dark:text-white" %>
               </div>
             </div>
           </article>

@@ -5,11 +5,11 @@
   <header class="border-b border-black py-16 dark:border-white sm:py-24">
     <div class="brand-container brand-grid">
       <div class="lg:col-span-3">
-        <span class="brand-section-marker"><span class="brand-section-marker__number">A</span> Article</span>
+      <span class="brand-section-marker"><span class="brand-section-marker__number">A</span> <%= spanish? ? "Articulo" : "Article" %></span>
       </div>
       <div class="lg:col-span-8 lg:col-start-5">
         <time datetime="<%= @article[:date] %>" class="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
-          <%= Date.parse(@article[:date]).strftime("%B %-d, %Y") %>
+          <%= site_date(@article[:date]) %>
         </time>
         <h1 class="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.05em] text-black dark:text-white sm:text-7xl">
           <%= @article[:title] %>
@@ -29,7 +29,7 @@
   <section class="py-16 sm:py-24">
     <div class="brand-container brand-grid">
       <div class="lg:col-span-3">
-        <p class="brand-kicker">Body</p>
+        <p class="brand-kicker"><%= spanish? ? "Cuerpo" : "Body" %></p>
       </div>
       <div class="font-reading text-lg leading-8 text-zinc-700 dark:text-zinc-300 lg:col-span-7 lg:col-start-5 [&_a]:text-black [&_a]:underline [&_a]:decoration-brand [&_a]:decoration-2 [&_a]:underline-offset-4 dark:[&_a]:text-white [&_code]:border [&_code]:border-black [&_code]:px-1 [&_code]:font-mono [&_code]:text-sm dark:[&_code]:border-white [&_h2]:mt-12 [&_h2]:font-display [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:tracking-[-0.035em] [&_h2]:text-black dark:[&_h2]:text-white [&_li]:mt-2 [&_ol]:mt-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mt-6">
         <%= @article[:content].html_safe %>

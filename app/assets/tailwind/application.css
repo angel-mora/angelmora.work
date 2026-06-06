@@ -548,9 +548,18 @@
     border-bottom: 0;
   }
 
-  .portfolio-tech svg {
+  .portfolio-tech svg,
+  .portfolio-tech__icon {
     height: 24px;
     width: 24px;
+  }
+
+  .portfolio-tech__icon {
+    object-fit: contain;
+  }
+
+  .portfolio-tech__icon--wide {
+    width: 34px;
   }
 
   .portfolio-tech text {

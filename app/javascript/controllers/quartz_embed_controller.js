@@ -5,12 +5,15 @@ export default class extends Controller {
   static values = { url: String }
 
   connect() {
-    this.statusTarget.textContent = "Connected"
+    const connectedLabel = this.element.dataset.quartzConnectedLabel || "Connected"
+    const errorLabel = this.element.dataset.quartzErrorLabel || "Quartz unavailable - check QUARTZ_URL"
+
+    this.statusTarget.textContent = connectedLabel
     this.iframeTarget.addEventListener("load", () => {
-      this.statusTarget.textContent = "Connected"
+      this.statusTarget.textContent = connectedLabel
     })
     this.iframeTarget.addEventListener("error", () => {
-      this.statusTarget.textContent = "Quartz unavailable — check QUARTZ_URL"
+      this.statusTarget.textContent = errorLabel
     })
   }
 }
