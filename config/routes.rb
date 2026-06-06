@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "about", to: "about#index"
   get "articles", to: "articles#index"
   get "articles/:slug", to: "articles#show", as: :article
+  get "writing", to: "writings#index", as: :writing
   get "projects", to: "projects#index"
 
   get "vault", to: "vault#index", as: :vault

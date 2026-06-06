@@ -8,6 +8,7 @@
       <ul class="flex items-center text-xs font-semibold uppercase tracking-[0.08em] text-zinc-600 dark:text-zinc-300">
         <%= render NavLinkComponent.new(name: "About", href: about_path, current: current_page?(about_path)) %>
         <%= render NavLinkComponent.new(name: "Articles", href: articles_path, current: current_page?(articles_path)) %>
+        <%= render NavLinkComponent.new(name: "Writing", href: writing_path, current: current_page?(writing_path)) %>
         <%= render NavLinkComponent.new(name: "Projects", href: projects_path, current: current_page?(projects_path)) %>
         <%= render NavLinkComponent.new(name: "Vault", href: vault_path, current: current_page?(vault_path)) %>
       </ul>
@@ -50,6 +51,7 @@
       <ul class="-my-2 divide-y divide-zinc-300 font-mono text-sm uppercase tracking-[0.08em] text-black dark:divide-zinc-700 dark:text-white">
         <li><%= link_to "About", about_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
         <li><%= link_to "Articles", articles_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
+        <li><%= link_to "Writing", writing_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
         <li><%= link_to "Projects", projects_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
         <li><%= link_to "Vault", vault_path, class: "block py-3 hover:underline decoration-brand decoration-2 underline-offset-4", data: { action: "mobile-menu#close" } %></li>
         <li><button type="button" class="mt-4 block w-full border-2 border-black bg-brand px-3 py-3 text-center text-black" data-action="booking-modal#open mobile-menu#close" data-booking-modal-type-param="recruiter">Book a call</button></li>

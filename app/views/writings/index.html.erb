@@ -1,0 +1,188 @@
+<% content_for :title, "Writing - Angel Mora" %>
+<%# BRAND artifact: Gallery Space register; Space Grotesk + Lora carry hierarchy; amber names the primary email CTA and neon trace only; neutrals are white/black/zinc with hard rules. %>
+
+<%
+  purchase_body = <<~TEXT
+    Hi Angel,
+
+    I want to receive Read This To Make A Real Change by email for $50 USD.
+
+    Please send payment instructions and delivery details.
+  TEXT
+%>
+
+<section class="border-b border-black bg-white dark:border-white dark:bg-black">
+  <div class="brand-container grid gap-10 py-12 sm:py-16 lg:grid-cols-12 lg:gap-12 lg:py-24">
+    <div class="lg:col-span-5">
+      <div class="border-2 border-black bg-black p-4 text-white dark:border-white dark:bg-white dark:text-black">
+        <div class="flex min-h-[520px] flex-col justify-between border border-white p-6 dark:border-black">
+          <div class="flex items-start justify-between gap-8 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-400 dark:text-zinc-600">
+            <span>LEPHUCR</span>
+            <span>La Partida</span>
+          </div>
+          <div>
+            <div class="mb-8 h-24 w-[2px] bg-brand"></div>
+            <p class="font-display text-5xl font-bold leading-none tracking-[-0.05em] sm:text-6xl">
+              Read this to make a real change.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4 border-t border-white pt-4 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-400 dark:border-black dark:text-zinc-600">
+            <span>Critical action</span>
+            <span class="text-right">Correspondence edition</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-center lg:col-span-7 lg:pl-8">
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="brand-tag brand-tag--featured">Writing</span>
+        <span class="brand-tag brand-tag--info">Reader hub</span>
+      </div>
+      <p class="brand-kicker">Angel Mora / Theory, design, art</p>
+      <h1 class="mt-5 max-w-4xl font-display text-5xl font-bold leading-none tracking-[-0.055em] text-black dark:text-white sm:text-7xl lg:text-8xl">
+        LEPHUCR is a book for people who are tired of mistaking discourse for action.
+      </h1>
+      <p class="mt-6 max-w-2xl font-reading text-xl leading-8 text-zinc-700 dark:text-zinc-300">
+        A living manuscript about public life, mercantile domination, critical organization, and the painful distance between wanting change and building it.
+      </p>
+      <p class="mt-5 max-w-2xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+        Built from the original LEPHUCR landing: sample chapters, table of contents, interoperable formats, Obsidian/GitHub logic, and the reader hub now published at lephucr.com.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <%= mail_to @purchase_email, "Receive by email - $50 USD", subject: "Read This To Make A Real Change - $50 USD", body: purchase_body, class: "brand-button brand-button--brand" %>
+        <%= link_to "Explore the reader hub", "#reader-hub", class: "brand-button brand-button--outline" %>
+      </div>
+      <p class="mt-5 max-w-xl font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
+        Direct, but not a funnel. Read first. Then write if the object is for you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<nav aria-label="Writing page sections" class="sticky top-0 z-40 border-b border-black bg-white dark:border-white dark:bg-black">
+  <div class="brand-container overflow-x-auto">
+    <ol class="flex min-w-max divide-x divide-black font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-zinc-600 dark:divide-white dark:text-zinc-300">
+      <li><%= link_to "01 Position", "#position", class: "block px-4 py-4 hover:bg-brand hover:text-black" %></li>
+      <li><%= link_to "02 Reader hub", "#reader-hub", class: "block px-4 py-4 hover:bg-brand hover:text-black" %></li>
+      <li><%= link_to "03 Formats", "#formats", class: "block px-4 py-4 hover:bg-brand hover:text-black" %></li>
+      <li><%= link_to "04 $50 mail", "#receive", class: "block px-4 py-4 hover:bg-brand hover:text-black" %></li>
+    </ol>
+  </div>
+</nav>
+
+<section id="position" class="bg-white py-16 dark:bg-black sm:py-24">
+  <div class="brand-container brand-grid">
+    <div class="lg:col-span-3">
+      <span class="brand-section-marker"><span class="brand-section-marker__number">01</span> Position</span>
+    </div>
+    <div class="lg:col-span-8 lg:col-start-5">
+      <p class="font-display text-4xl font-bold leading-tight tracking-[-0.04em] text-black dark:text-white sm:text-6xl">
+        Not self-help. Not academic distance. A field note for action after theory has done its damage.
+      </p>
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <% @reader_modes.each do |title, description| %>
+          <article class="brand-card p-5">
+            <h2 class="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-black dark:text-white"><%= title %></h2>
+            <p class="mt-4 text-sm leading-6 text-zinc-600 dark:text-zinc-400"><%= description %></p>
+          </article>
+        <% end %>
+      </div>
+      <div class="mt-10 border-l-4 border-brand bg-zinc-100 p-6 dark:bg-zinc-950">
+        <p class="font-reading text-xl leading-8 text-zinc-800 dark:text-zinc-200">
+          "It is necessary to analyze mercantile domination as process, flow, and history."
+        </p>
+        <p class="mt-3 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">From the original LEPHUCR introduction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reader-hub" class="border-y border-black bg-zinc-50 py-16 dark:border-white dark:bg-zinc-950 sm:py-24">
+  <div class="brand-container brand-grid">
+    <div class="lg:col-span-3">
+      <span class="brand-section-marker"><span class="brand-section-marker__number">02</span> Reader hub</span>
+      <p class="mt-5 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+        Adapted from the reference table of contents and the live Quartz reader at lephucr.com.
+      </p>
+    </div>
+    <div class="space-y-6 lg:col-span-8 lg:col-start-5">
+      <% @reader_tracks.each do |track| %>
+        <article class="brand-panel p-0">
+          <header class="grid gap-4 border-b border-black p-5 dark:border-white sm:grid-cols-[auto_1fr_auto] sm:items-start">
+            <span class="font-display text-5xl font-bold tracking-[-0.05em] text-black dark:text-white"><%= track[:number] %></span>
+            <div>
+              <h2 class="font-display text-2xl font-bold tracking-[-0.03em] text-black dark:text-white"><%= track[:title] %></h2>
+              <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400"><%= track[:note] %></p>
+            </div>
+            <span class="brand-tag <%= track[:status] == "Open hub" ? "brand-tag--success" : "brand-tag--info" %>"><%= track[:status] %></span>
+          </header>
+          <ol class="divide-y divide-zinc-300 dark:divide-zinc-700">
+            <% track[:chapters].each do |chapter| %>
+              <li class="grid gap-3 px-5 py-4 sm:grid-cols-[1fr_auto] sm:items-center">
+                <div>
+                  <% if chapter[:href].present? %>
+                    <%= link_to chapter[:title], chapter[:href], class: "text-sm font-semibold text-black underline decoration-brand decoration-2 underline-offset-4 dark:text-white", target: "_blank", rel: "noopener" %>
+                  <% else %>
+                    <span class="text-sm font-semibold text-black dark:text-white"><%= chapter[:title] %></span>
+                  <% end %>
+                </div>
+                <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">p. <%= chapter[:page] %></span>
+              </li>
+            <% end %>
+          </ol>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section id="formats" class="bg-white py-16 dark:bg-black sm:py-24">
+  <div class="brand-container brand-grid">
+    <div class="lg:col-span-3">
+      <span class="brand-section-marker"><span class="brand-section-marker__number">03</span> Formats</span>
+    </div>
+    <div class="lg:col-span-8 lg:col-start-5">
+      <h2 class="font-display text-4xl font-bold tracking-[-0.04em] text-black dark:text-white sm:text-5xl">
+        A book, but also a small distribution system.
+      </h2>
+      <div class="mt-10 grid border border-black dark:border-white md:grid-cols-2">
+        <% @deliverables.each_with_index do |(title, description), index| %>
+          <article class="border-b border-black p-6 dark:border-white md:border-r <%= index > 1 ? "md:border-b-0" : "" %> <%= index.odd? ? "md:border-r-0" : "" %>">
+            <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400"><%= format("%02d", index + 1) %></p>
+            <h3 class="mt-4 font-display text-2xl font-bold tracking-[-0.03em] text-black dark:text-white"><%= title %></h3>
+            <p class="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400"><%= description %></p>
+          </article>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="receive" class="border-t border-black bg-black py-16 text-white dark:border-white dark:bg-white dark:text-black sm:py-24">
+  <div class="brand-container brand-grid">
+    <div class="lg:col-span-3">
+      <span class="brand-section-marker text-white dark:text-black"><span class="brand-section-marker__number border-white dark:border-black">04</span> Purchase</span>
+    </div>
+    <div class="lg:col-span-8 lg:col-start-5">
+      <div class="grid gap-8 border border-white p-6 dark:border-black lg:grid-cols-[1fr_auto] lg:p-8">
+        <div>
+          <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400 dark:text-zinc-600">Correspondence edition</p>
+          <h2 class="mt-4 max-w-2xl font-display text-4xl font-bold leading-tight tracking-[-0.045em] sm:text-6xl">
+            Receive the manuscript by email for $50 USD.
+          </h2>
+          <p class="mt-5 max-w-xl text-sm leading-7 text-zinc-300 dark:text-zinc-700">
+            No aggressive funnel. Send the email, get payment instructions, receive the book and delivery notes directly. If you need to inspect the work first, the reader hub is open above.
+          </p>
+        </div>
+        <div class="flex flex-col justify-between gap-6 border-t border-white pt-6 dark:border-black lg:min-w-60 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+          <div>
+            <p class="font-display text-7xl font-bold tracking-[-0.06em]">$50</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-400 dark:text-zinc-600">USD / email delivery</p>
+          </div>
+          <%= mail_to @purchase_email, "Write to receive it", subject: "Read This To Make A Real Change - $50 USD", body: purchase_body, class: "brand-button brand-button--brand" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
